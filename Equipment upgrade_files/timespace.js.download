@@ -1,0 +1,376 @@
+$(document).ready(function(){
+    $( ".timespace_rooms" ).each(function() {
+        drawRoute($(this));
+    });
+});
+
+
+function drawRoute(map){
+    var route = map.attr('data-route').split(',');
+
+    if (route.length < 2){
+        return;
+    }
+    var room_size = map.find('.timespace_room').outerWidth();
+    var route_width = map.outerWidth();
+    var route_height = map.outerHeight();
+
+    if (Number(map.attr('data-columns')) > 1){
+        var gap = (route_width - (room_size * Number(map.attr('data-columns')))) / (Number(map.attr('data-columns')) - 1);
+    } else {
+        var gap = (route_height - (room_size * Number(map.attr('data-rows')))) / (Number(map.attr('data-rows')) - 1);
+    }
+
+    var rooms = [];
+    map.find(".timespace_room").each(function() {
+        var room_id = Number($(this).attr('data-id'));
+        var room_row_index = Number($(this).attr('data-row'));
+        var room_col_index = Number($(this).attr('data-column'));
+        
+        if (room_id){
+            rooms[room_id] = [room_col_index, room_row_index, []]
+        }
+    });
+
+    var draw_line = true;
+
+    const counts = {};
+    for (p = 1; p < route.length; p++)
+    {
+        var room_id = route[p];
+        var before_room_id = route[p - 1];
+        if (!rooms[room_id]){
+            return;
+        }
+        var diff = Math.abs(rooms[room_id][0] - rooms[before_room_id][0]) + Math.abs(rooms[room_id][1] - rooms[before_room_id][1])
+
+        if (diff > 1){
+            draw_line = false;
+            break;
+        }
+        counts[room_id] = counts[room_id] ? counts[room_id] + 1 : 1;
+        if (counts[room_id] > 3){
+            draw_line = false;
+            break;
+        }
+    }
+
+    var direction = "";
+    var roomPoint = 5;
+    var moveIt = room_size / 4 + gap / 4;
+    var X = (rooms[route[0]][0]+1)*room_size - room_size/2 + gap * rooms[route[0]][0];
+    var Y = (rooms[route[0]][1]+1)*room_size - room_size/2 + gap * rooms[route[0]][1];
+
+
+    var c = document.createElement('canvas');
+    c.setAttribute("class", "timespace_route");
+    c.setAttribute("width", route_width);
+    c.setAttribute("height", route_height);
+
+    map.append(c)
+
+    var ctx = c.getContext("2d");
+    ctx.shadowBlur = 2;
+    ctx.shadowColor = "#000";
+
+    if (!draw_line)
+    {
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "bold 20px Arial";
+        
+        var rooms_order = {};
+
+        for (p = 0; p < route.length; p++)
+        {
+            var room_id = route[p];
+            if (room_id in rooms_order){
+                rooms_order[room_id].push(p + 1);
+            } else {
+                rooms_order[room_id] = [p + 1];
+            }
+            
+        }
+
+        for (const property in rooms_order)
+        {
+            var room_id = Number(property);
+            var room_number = rooms_order[room_id].join(' ');
+            var pokojLeft = rooms[room_id][0] * room_size + (room_size - ctx.measureText(room_number).width - 2) + gap * rooms[room_id][0];
+            var pokojTop = rooms[room_id][1] * room_size + (room_size - 5) + gap * rooms[room_id][1];
+
+            ctx.fillText(room_number, pokojLeft, pokojTop);
+        }
+        
+    }
+    else
+    {
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.lineWidth = Math.ceil(room_size / 30);
+        ctx.beginPath();
+        ctx.lineCap = "round";
+        ctx.moveTo(X, Y);
+
+        
+        for (p = 1; p < route.length; p++)
+        {
+            
+            if (route[p] == route[p-2])
+            {
+                
+                if (direction == "p")
+                {
+                    if (roomPoint <= 3) {Y += moveIt; roomPoint += 3; rooms[route[p-1]][2].push(roomPoint);}
+                    else if (roomPoint >= 7){Y -= moveIt; roomPoint -= 3; rooms[route[p-1]][2].push(roomPoint);}
+                    else
+                    {
+                        var isUp = true;
+                        for (spr = p; spr < route.length; spr++)
+                        {
+                            if (rooms[route[spr]][1] > rooms[route[p-1]][1] || rooms[route[p-2]][2].indexOf(3) != -1)
+                            {
+                                isUp = false;
+                            }
+                        }
+                        if (isUp == true) {Y -= moveIt; roomPoint -= 3; rooms[route[p-1]][2].push(roomPoint);}
+                        else {Y += moveIt; roomPoint += 3; rooms[route[p-1]][2].push(roomPoint);}
+                    }
+                }
+                else if (direction == "l")
+                {
+                    if (roomPoint <= 3) {Y += moveIt; roomPoint += 3; rooms[route[p-1]][2].push(roomPoint);}
+                    else if (roomPoint >= 7){Y -= moveIt; roomPoint -= 3; rooms[route[p-1]][2].push(roomPoint);}
+                    else
+                    {
+                        var isUp = true;
+                        for (spr = p; spr < route.length; spr++)
+                        {
+                            if (rooms[route[spr]][1] > rooms[route[p-1]][1] || rooms[route[p-2]][2].indexOf(1) != -1)
+                            {
+                                isUp = false;
+                            }
+                        }
+                        if (isUp == true) {Y -= moveIt; roomPoint -= 3; rooms[route[p-1]][2].push(roomPoint);}
+                        else {Y += moveIt; roomPoint += 3; rooms[route[p-1]][2].push(roomPoint);}
+                    }
+                }
+                else if (direction == "d")
+                {
+                    if (roomPoint % 3 == 1) {X += moveIt; roomPoint++; rooms[route[p-1]][2].push(roomPoint);}
+                    else if (roomPoint % 3 == 0) {X -= moveIt; roomPoint--; rooms[route[p-1]][2].push(roomPoint);}
+                    else
+                    {
+                        var isLeft = true;
+                        for (spr = p; spr < route.length; spr++)
+                        {
+                            if (rooms[route[spr]][0] > rooms[route[p-1]][0] || rooms[route[p-2]][2].indexOf(9) != -1)
+                            {
+                                isLeft = false;
+                            }
+                        }
+                        if (isLeft == true) {X -= moveIt; roomPoint--; rooms[route[p-1]][2].push(roomPoint); }
+                        else {X += moveIt; roomPoint++; rooms[route[p-1]][2].push(roomPoint);}
+                    }
+                }
+                else if (direction == "u")
+                {
+                    if (roomPoint % 3 == 1) {X += moveIt; roomPoint++; rooms[route[p-1]][2].push(roomPoint);}
+                    else if (roomPoint % 3 == 0) {X -= moveIt; roomPoint--; rooms[route[p-1]][2].push(roomPoint);}
+                    else
+                    {
+                        var isLeft = true;
+                        for (spr = p; spr < route.length; spr++)
+                        {
+                            if (rooms[route[spr]][0] > rooms[route[p-1]][0] || rooms[route[p-2]][2].indexOf(7) != -1)
+                            {
+                                isLeft = false;
+                            }
+                        }
+                        if (isLeft == true) {X -= moveIt; roomPoint--; rooms[route[p-1]][2].push(roomPoint); }
+                        else {X += moveIt; roomPoint++; rooms[route[p-1]][2].push(roomPoint);}
+                    }
+                }
+                ctx.lineTo(X, Y);
+                
+                if (direction == "l"){X += moveIt*2; roomPoint -= 2; direction = "p";}
+                else if (direction == "p"){X -= moveIt*2; roomPoint += 2; direction = "l";}
+                else if (direction == "u"){Y += moveIt*2; roomPoint -= 6; direction = "d";}
+                else if (direction == "d"){Y -= moveIt*2; roomPoint += 6; direction = "u";}
+                rooms[route[p]][2].push(roomPoint);
+                ctx.lineTo(X, Y);
+                
+            }
+            else
+            {
+                
+                for (ile = 0; ile < 2; ile++)
+                {
+                    var czyDalej = false;
+                    var tmpArr = [];
+                    for (spr = p; spr < route.length; spr++)
+                    {
+                        if (tmpArr.indexOf(route[spr]) != -1){break;}
+                        if (p < route.length - 2){if (route[p-1] == route[p+1]){break;}}
+                        tmpArr.push(route[spr]);
+                        
+                        
+                        if (rooms[route[spr]][0] == rooms[route[p-1]][0])
+                        {
+                            if (roomPoint % 3 == 1)
+                            {
+                                if ((rooms[route[spr]][2].indexOf(1) != -1 && rooms[route[spr]][2].indexOf(10) != -1) || (rooms[route[spr]][2].indexOf(7) != -1 && rooms[route[spr]][2].indexOf(19) != -1)){czyDalej = true;}
+                            }
+                            else if (roomPoint % 3 == 2)
+                            {
+                                if ((rooms[route[spr]][2].indexOf(2) != -1 && rooms[route[spr]][2].indexOf(11) != -1) || (rooms[route[spr]][2].indexOf(8) != -1 && rooms[route[spr]][2].indexOf(20) != -1)){czyDalej = true;}
+                            }
+                            else if (roomPoint % 3 == 0)
+                            {
+                                if ((rooms[route[spr]][2].indexOf(3) != -1 && rooms[route[spr]][2].indexOf(12) != -1) || (rooms[route[spr]][2].indexOf(9) != -1 && rooms[route[spr]][2].indexOf(21) != -1)){czyDalej = true;}
+                            }
+                            
+                        }
+                        else if (rooms[route[spr]][1] == rooms[route[p-1]][1])
+                        {
+                            if (roomPoint <= 3)
+                            {
+                                if ((rooms[route[spr]][2].indexOf(1) != -1 && rooms[route[spr]][2].indexOf(13) != -1) || (rooms[route[spr]][2].indexOf(3) != -1 && rooms[route[spr]][2].indexOf(16) != -1)){czyDalej = true;}
+                            }
+                            else if (roomPoint <= 6)
+                            {
+                                if ((rooms[route[spr]][2].indexOf(4) != -1 && rooms[route[spr]][2].indexOf(14) != -1) || (rooms[route[spr]][2].indexOf(6) != -1 && rooms[route[spr]][2].indexOf(17) != -1)){czyDalej = true;}
+                            }
+                            else if (roomPoint <= 9)
+                            {
+                                if ((rooms[route[spr]][2].indexOf(7) != -1 && rooms[route[spr]][2].indexOf(15) != -1) || (rooms[route[spr]][2].indexOf(9) != -1 && rooms[route[spr]][2].indexOf(18) != -1)){czyDalej = true;}
+                            }
+                        }
+                    }
+                    
+                    if (czyDalej == true)
+                    {
+                            if (direction == "p"){X += moveIt; roomPoint++;}
+                            else if (direction == "l"){X -= moveIt; roomPoint--;}
+                            else if (direction == "d"){Y += moveIt; roomPoint += 3;}
+                            else if (direction == "u"){Y -= moveIt; roomPoint -= 3;}
+                            rooms[route[p-1]][2].push(roomPoint);
+                            ctx.lineTo(X, Y);
+                    }
+                }
+                
+                
+                if (rooms[route[p]][0] > rooms[route[p-1]][0])
+                {
+                    while (roomPoint % 3 != 0)
+                    {
+                        roomPoint++;
+                        rooms[route[p-1]][2].push(roomPoint);
+                        X += moveIt;;
+                    }
+                    direction = "p"
+                }
+                else if (rooms[route[p]][0] < rooms[route[p-1]][0])
+                {
+                    while (roomPoint % 3 != 1)
+                    {
+                        roomPoint--;
+                        rooms[route[p-1]][2].push(roomPoint);
+                        X -= moveIt;
+                    }	
+                    direction = "l";
+                }
+                else if (rooms[route[p]][1] > rooms[route[p-1]][1])
+                {
+                    while (roomPoint < 7) {
+                        roomPoint += 3;
+                        rooms[route[p-1]][2].push(roomPoint);
+                        Y += moveIt;
+                    }	
+                    direction = "d";
+                }
+                else if (rooms[route[p]][1] < rooms[route[p-1]][1])
+                {
+                    while (roomPoint > 3)
+                    {
+                        roomPoint -= 3;
+                        rooms[route[p-1]][2].push(roomPoint);
+                        Y -= moveIt;
+                    }
+                    direction = "u";
+                }
+                
+                if (direction == "p")
+                {
+                    X += moveIt*2; roomPoint -= 2;
+                    if (roomPoint == 1){rooms[route[p]][2].push(13); rooms[route[p-1]][2].push(16);}
+                    else if (roomPoint == 4){rooms[route[p]][2].push(14); rooms[route[p-1]][2].push(17);}
+                    else if (roomPoint == 7){rooms[route[p]][2].push(15); rooms[route[p-1]][2].push(18);}
+                }
+                else if (direction == "l")
+                {
+                    X -= moveIt*2; roomPoint += 2;
+                    if (roomPoint == 3){rooms[route[p]][2].push(16); rooms[route[p-1]][2].push(13);}
+                    else if (roomPoint == 6){rooms[route[p]][2].push(17); rooms[route[p-1]][2].push(14);}
+                    else if (roomPoint == 9){rooms[route[p]][2].push(18); rooms[route[p-1]][2].push(15);}
+                }
+                else if (direction == "d")
+                {
+                    Y += moveIt*2; roomPoint -= 6;
+                    if (roomPoint == 1){rooms[route[p]][2].push(10); rooms[route[p-1]][2].push(19);}
+                    else if (roomPoint == 2){rooms[route[p]][2].push(11); rooms[route[p-1]][2].push(20);}
+                    else if (roomPoint == 3){rooms[route[p]][2].push(12); rooms[route[p-1]][2].push(21);}
+                }
+                else if (direction == "u")
+                {
+                    Y -= moveIt*2; roomPoint += 6;
+                    if (roomPoint == 7){rooms[route[p]][2].push(19); rooms[route[p-1]][2].push(10);}
+                    else if (roomPoint == 8){rooms[route[p]][2].push(20); rooms[route[p-1]][2].push(11);}
+                    else if (roomPoint == 9){rooms[route[p]][2].push(21); rooms[route[p-1]][2].push(12);}
+                }
+                rooms[route[p]][2].push(roomPoint);
+                ctx.lineTo(X, Y);
+            }
+        }
+
+        if (direction == "u")
+        {	
+            Y -= moveIt;
+            ctx.lineTo(X, Y);
+            ctx.moveTo(X, Y-2);
+            ctx.lineTo(X - (room_size/5), Y-2 + (room_size/5));
+            ctx.moveTo(X, Y-2);
+            ctx.lineTo(X + (room_size/5), Y-2 + (room_size/5));
+        }
+        else if (direction == "d")
+        {	
+            Y += moveIt;
+            ctx.lineTo(X, Y);
+            ctx.moveTo(X, Y+2);
+            ctx.lineTo(X - (room_size/5), Y+2- (room_size/5));
+            ctx.moveTo(X, Y+2);
+            ctx.lineTo(X + (room_size/5), Y+2- (room_size/5));
+        }
+        else if (direction == "l")
+        {	
+            X -= moveIt;
+            ctx.lineTo(X, Y);
+            ctx.moveTo(X-2, Y);
+            ctx.lineTo(X-2 + (room_size/5), Y + (room_size/5));
+            ctx.moveTo(X-2, Y);
+            ctx.lineTo(X-2 + (room_size/5), Y - (room_size/5));
+        }
+        else if (direction == "p")
+        {	
+            X += moveIt;
+            ctx.lineTo(X, Y);
+            ctx.moveTo(X+2, Y);
+            ctx.lineTo(X+2 - (room_size/5), Y + (room_size/5));
+            ctx.moveTo(X+2, Y);
+            ctx.lineTo(X+2 - (room_size/5), Y - (room_size/5));
+        }
+
+            
+        ctx.stroke();
+
+    }
+
+}

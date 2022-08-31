@@ -1,0 +1,30 @@
+button1: Dmg: 352 - 942
+ HitRate: 203
+ CritChance: 14
+ CritDmg: 209
+ Rarity: 5
+
+button2: Dmg: 421 - 2248
+ HitRate: 610
+ CritChance: 13
+ CritDmg: 257
+ Rarity: 4
+
+button3: Dmg: 915 - 3245
+ HitRate: 395
+ CritChance: 16
+ CritDmg: 361
+ Rarity: 3
+
+button4: Dmg: 1282 - 2820
+ HitRate: 501
+ CritChance: 17
+ CritDmg: 346
+ Rarity: 5
+
+button5: Dmg: 985 - 5550
+ HitRate: 1182
+ CritChance: 12
+ CritDmg: 309
+ Rarity: 1
+
