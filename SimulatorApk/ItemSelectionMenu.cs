@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -29,6 +30,7 @@ namespace SimulatorApk
         private void BtnViewStats_Click(object sender, EventArgs e)
         {
             tbItemStats.Text = null;
+
             if (sender is not Button button) return;
             var toolTip = new ToolTip();
             var caption = Equipment.Equipments[button.Name];
@@ -36,14 +38,8 @@ namespace SimulatorApk
             tbItemStats.Text = caption.ToString();
             button.BackColor = Color.Blue;
 
-            
             SharedClass.ImageToDisplay = button.Image;
-        }
-
-
-        private void BtnSelectItem_Click(object sender, EventArgs e)
-        {
-            //SharedClass.ImageToDisplay = MyImageToDisplay;
+            SharedClass.UpgradeLvlValue = Equipment.Equipments[button.Name];
         }
 
         private void ItemSelectionMenu_Load(object sender, EventArgs e)

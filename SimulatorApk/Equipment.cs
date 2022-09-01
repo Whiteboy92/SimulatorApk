@@ -22,18 +22,20 @@ namespace SimulatorApk
         private int CritChance { get; set; }
         private int CritDmg { get; set; }
         private int Rarity { get; set; }
-        
-        
-        // on hover display
+        public int UpgradeLevel { get; set; }
+
+
+        // display
         public override string ToString()
         {
             return " Dmg: " + DmgMin + " - " + DmgMax + "\n" + 
                    " HitRate: " + HitRate + "\n" + 
                    " CritChance: " + CritChance + "\n" + 
                    " CritDmg: " + CritDmg + "\n" + 
-                   " Rarity: " + Rarity;
+                   " Rarity: " + Rarity + "\n" +
+                   " Upgrade Lvl: " + UpgradeLevel;
         }
-        
+
 
         public bool Equals(Equipment other)
         {
@@ -57,7 +59,7 @@ namespace SimulatorApk
         
         //Equipment constructor
         private Equipment(int dmgMax,     int dmgMin, int hitRate,
-                          int critChance, int critDmg, int rarity)
+                          int critChance, int critDmg, int rarity, int upgradeLvl)
         {
             DmgMax = dmgMax;
             DmgMin = dmgMin;
@@ -65,12 +67,14 @@ namespace SimulatorApk
             CritChance = critChance;
             CritDmg = critDmg;
             Rarity = rarity;
+            UpgradeLevel = upgradeLvl;
         }
 
 
         public static void ClearInstances()
         {
             File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt");
+            
         }
         
 
@@ -89,18 +93,13 @@ namespace SimulatorApk
                     hitRate: random.Next(100 * i, 350 * i),
                     critChance: random.Next(8, 22),
                     critDmg: random.Next(175, 450),
-                    rarity: random.Next(0, 8));
+                    rarity: random.Next(0, 8),
+                    upgradeLvl: random.Next(0,0));
                 
 
             }
             sbOutput.AppendLine(string.Join(strSeperator, Equipments));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt", sbOutput.ToString());
-        }
-
-
-        public static void SelectedItem()
-        {
-
         }
 
         //debug list for equipment
