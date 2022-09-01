@@ -56,6 +56,10 @@ namespace SimulatorApk
             this.lbUpgradeLvl = new System.Windows.Forms.Label();
             this.UpgradeLvl = new System.Windows.Forms.Label();
             this.lbUpgradeOutput = new System.Windows.Forms.Label();
+            this.lbScrollsUsed = new System.Windows.Forms.Label();
+            this.TotalScrollsUsed = new System.Windows.Forms.Label();
+            this.lbAmuletsUsed = new System.Windows.Forms.Label();
+            this.TotalAmuletsUsed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbItemUpgrade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -70,6 +74,7 @@ namespace SimulatorApk
             this.btnReset.TabIndex = 0;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // btnUpgrade
             // 
@@ -251,18 +256,20 @@ namespace SimulatorApk
             // lbUpgradeLvl
             // 
             this.lbUpgradeLvl.AutoSize = true;
-            this.lbUpgradeLvl.Location = new System.Drawing.Point(132, 217);
+            this.lbUpgradeLvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbUpgradeLvl.Location = new System.Drawing.Point(132, 213);
             this.lbUpgradeLvl.Name = "lbUpgradeLvl";
-            this.lbUpgradeLvl.Size = new System.Drawing.Size(77, 13);
+            this.lbUpgradeLvl.Size = new System.Drawing.Size(102, 18);
             this.lbUpgradeLvl.TabIndex = 23;
             this.lbUpgradeLvl.Text = "Upgrade Level";
             // 
             // UpgradeLvl
             // 
             this.UpgradeLvl.AutoSize = true;
-            this.UpgradeLvl.Location = new System.Drawing.Point(215, 217);
+            this.UpgradeLvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.UpgradeLvl.Location = new System.Drawing.Point(240, 213);
             this.UpgradeLvl.Name = "UpgradeLvl";
-            this.UpgradeLvl.Size = new System.Drawing.Size(0, 13);
+            this.UpgradeLvl.Size = new System.Drawing.Size(0, 18);
             this.UpgradeLvl.TabIndex = 24;
             // 
             // lbUpgradeOutput
@@ -273,12 +280,48 @@ namespace SimulatorApk
             this.lbUpgradeOutput.TabIndex = 25;
             this.lbUpgradeOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbScrollsUsed
+            // 
+            this.lbScrollsUsed.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbScrollsUsed.Location = new System.Drawing.Point(493, 240);
+            this.lbScrollsUsed.Name = "lbScrollsUsed";
+            this.lbScrollsUsed.Size = new System.Drawing.Size(100, 23);
+            this.lbScrollsUsed.TabIndex = 26;
+            this.lbScrollsUsed.Text = "Scrolls Used:";
+            // 
+            // TotalScrollsUsed
+            // 
+            this.TotalScrollsUsed.Location = new System.Drawing.Point(599, 240);
+            this.TotalScrollsUsed.Name = "TotalScrollsUsed";
+            this.TotalScrollsUsed.Size = new System.Drawing.Size(100, 23);
+            this.TotalScrollsUsed.TabIndex = 27;
+            // 
+            // lbAmuletsUsed
+            // 
+            this.lbAmuletsUsed.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbAmuletsUsed.Location = new System.Drawing.Point(493, 263);
+            this.lbAmuletsUsed.Name = "lbAmuletsUsed";
+            this.lbAmuletsUsed.Size = new System.Drawing.Size(100, 23);
+            this.lbAmuletsUsed.TabIndex = 28;
+            this.lbAmuletsUsed.Text = "Amulets Used:";
+            // 
+            // TotalAmuletsUsed
+            // 
+            this.TotalAmuletsUsed.Location = new System.Drawing.Point(599, 263);
+            this.TotalAmuletsUsed.Name = "TotalAmuletsUsed";
+            this.TotalAmuletsUsed.Size = new System.Drawing.Size(100, 23);
+            this.TotalAmuletsUsed.TabIndex = 29;
+            // 
             // ItemUpgradeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1018, 572);
+            this.Controls.Add(this.TotalAmuletsUsed);
+            this.Controls.Add(this.lbAmuletsUsed);
+            this.Controls.Add(this.TotalScrollsUsed);
+            this.Controls.Add(this.lbScrollsUsed);
             this.Controls.Add(this.lbUpgradeOutput);
             this.Controls.Add(this.UpgradeLvl);
             this.Controls.Add(this.lbUpgradeLvl);
@@ -319,11 +362,8 @@ namespace SimulatorApk
         private System.Windows.Forms.Label lbGemUsed;
 
         private System.Windows.Forms.Label lbPowderUsed;
-        private System.Windows.Forms.Label TotalGoldUsed;
-        private System.Windows.Forms.Label TotalPowderUsed;
 
         private System.Windows.Forms.Label lbGoldUsed;
-        private System.Windows.Forms.Label TotalGemUsed;
 
         private System.Windows.Forms.Label lbTotals;
 
@@ -338,17 +378,23 @@ namespace SimulatorApk
 
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnUpgrade;
-        private System.Windows.Forms.CheckBox cBoxScroll;
-        private System.Windows.Forms.CheckBox cBoxAmulet;
         private System.Windows.Forms.PictureBox pbItemUpgrade;
 
         #endregion
-
-        private System.Windows.Forms.Label PowderNeeded;
-        private System.Windows.Forms.Label GemNeeded;
-        private System.Windows.Forms.Label GoldNeeded;
         private System.Windows.Forms.Label lbUpgradeLvl;
         private System.Windows.Forms.Label UpgradeLvl;
         private System.Windows.Forms.Label lbUpgradeOutput;
+        private System.Windows.Forms.Label lbScrollsUsed;
+        private System.Windows.Forms.Label lbAmuletsUsed;
+        public System.Windows.Forms.CheckBox cBoxScroll;
+        public System.Windows.Forms.CheckBox cBoxAmulet;
+        private System.Windows.Forms.Label TotalGoldUsed;
+        private System.Windows.Forms.Label TotalPowderUsed;
+        private System.Windows.Forms.Label TotalGemUsed;
+        private System.Windows.Forms.Label TotalScrollsUsed;
+        private System.Windows.Forms.Label TotalAmuletsUsed;
+        private System.Windows.Forms.Label PowderNeeded;
+        private System.Windows.Forms.Label GemNeeded;
+        private System.Windows.Forms.Label GoldNeeded;
     }
 }

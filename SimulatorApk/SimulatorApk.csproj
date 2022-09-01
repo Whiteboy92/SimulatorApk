@@ -124,7 +124,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SavingFile.cs" />
+    <Compile Include="RarityStats.cs" />
     <Compile Include="SharedClass.cs" />
     <EmbeddedResource Include="ItemRarityMenu.resx">
       <DependentUpon>ItemRarityMenu.cs</DependentUpon>
