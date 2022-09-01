@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 
 namespace SimulatorApk
 {
@@ -21,7 +20,7 @@ namespace SimulatorApk
         private int HitRate { get; set; }
         private int CritChance { get; set; }
         private int CritDmg { get; set; }
-        private int Rarity { get; set; }
+        public int Rarity { get; set; }
         public int UpgradeLevel { get; set; }
 
 
@@ -74,7 +73,6 @@ namespace SimulatorApk
         public static void ClearInstances()
         {
             File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt");
-            
         }
         
 
@@ -95,8 +93,6 @@ namespace SimulatorApk
                     critDmg: random.Next(175, 450),
                     rarity: random.Next(0, 8),
                     upgradeLvl: random.Next(0,0));
-                
-
             }
             sbOutput.AppendLine(string.Join(strSeperator, Equipments));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt", sbOutput.ToString());

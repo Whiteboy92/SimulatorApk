@@ -4,7 +4,8 @@ namespace SimulatorApk
 {
     static class SharedClass
     {
-            public static Image ImageToDisplay { get; set; }
-            public static Equipment UpgradeLvlValue { get; set; }
+        public static Image ImageToDisplay { get; set; }
+        public static Equipment UpgradeLvlValue { get; set; }
+        public static Equipment RarityLvlValue { get; set; }
     }
 }

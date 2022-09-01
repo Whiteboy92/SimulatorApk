@@ -39,12 +39,7 @@ namespace SimulatorApk
 
             SharedClass.ImageToDisplay = button.Image;
             SharedClass.UpgradeLvlValue = Equipment.Equipments[button.Name];
-        }
-
-        private void ItemSelectionMenu_Load(object sender, EventArgs e)
-        {
-
+            SharedClass.RarityLvlValue = Equipment.Equipments[button.Name];
         }
     }
-    
 }

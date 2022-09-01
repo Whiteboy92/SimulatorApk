@@ -19,6 +19,7 @@ namespace SimulatorApk
         private void MyMain_Load(object sender, EventArgs e)
         {
             Equipment.CreateInstance();
+            //RarityStats.CreateInstance();
         }
 
         private void OpenChildForm(Form childForm, object btnSender)

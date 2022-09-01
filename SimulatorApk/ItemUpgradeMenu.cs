@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 
-
+// disable button rarity and upgrade if not selected an item !!!
 namespace SimulatorApk
 {
     public partial class ItemUpgradeMenu : Form
@@ -30,7 +30,6 @@ namespace SimulatorApk
             GoldNeeded.Text = ((1 + x) * 750).ToString();
             GemNeeded.Text = ((1 + x) * 12).ToString();
             PowderNeeded.Text = ((1 + x) * 150).ToString();
-
         }
 
         public bool IsEqScroll
