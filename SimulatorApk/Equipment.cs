@@ -4,6 +4,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
+// fixes
+// rolling stats of just 1 item
+// changing rarity of just selected item not all
+// disable button rarity and upgrade if not selected an item
+
 namespace SimulatorApk
 {
     public class Equipment : IEquatable<Equipment>
@@ -74,7 +79,7 @@ namespace SimulatorApk
         {
             File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt");
         }
-        
+
 
         // creates instance of Equipment class and assigns it's parameters
         public static void CreateInstance()
@@ -85,14 +90,14 @@ namespace SimulatorApk
 
             for (var i = 1; i <= 5; i++)
             {
-                Equipments["button"+i] = new Equipment(
+                Equipments["button" + i] = new Equipment(
                     dmgMin: random.Next(150 * i, 500 * i),
                     dmgMax: random.Next(550 * i, 1200 * i),
                     hitRate: random.Next(100 * i, 350 * i),
                     critChance: random.Next(8, 22),
                     critDmg: random.Next(175, 450),
                     rarity: random.Next(0, 8),
-                    upgradeLvl: random.Next(0,0));
+                    upgradeLvl: random.Next(0, 0));
             }
             sbOutput.AppendLine(string.Join(strSeperator, Equipments));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt", sbOutput.ToString());

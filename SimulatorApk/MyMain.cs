@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -16,14 +17,20 @@ namespace SimulatorApk
             InitializeComponent();
         }
 
+
         private void MyMain_Load(object sender, EventArgs e)
         {
             Equipment.CreateInstance();
-            //RarityStats.CreateInstance();
         }
+
 
         private void OpenChildForm(Form childForm, object btnSender)
         {
+            if (btnSender is null)
+            {
+                throw new ArgumentNullException(nameof(btnSender));
+            }
+
             _activeForm?.Close();
 
             _activeForm = childForm;
@@ -45,11 +52,13 @@ namespace SimulatorApk
             OpenChildForm(new ItemSelectionMenu(), sender);
         }
 
+
         private void BtnUpgrade_Click(object sender, EventArgs e)
         {
             btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Upgrade_Click.png");
             OpenChildForm(new ItemUpgradeMenu(), sender);
         }
+
 
         private void BtnRarity_Click(object sender, EventArgs e)
         {
@@ -62,10 +71,14 @@ namespace SimulatorApk
         {
             btnItemSelect.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Selection.png");
         }
+
+
         private void BtnUpgrade_Leave(object sender, EventArgs e)
         {
             btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Upgrade.png");
         }
+
+
         private void BtnRarity_Leave(object sender, EventArgs e)
         {
             btnRarity.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Rarity.png");

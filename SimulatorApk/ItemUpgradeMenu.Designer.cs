@@ -68,6 +68,8 @@ namespace SimulatorApk
             // 
             // btnReset
             // 
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnReset.Location = new System.Drawing.Point(121, 431);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
@@ -78,6 +80,8 @@ namespace SimulatorApk
             // 
             // btnUpgrade
             // 
+            this.btnUpgrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpgrade.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnUpgrade.Location = new System.Drawing.Point(121, 460);
             this.btnUpgrade.Name = "btnUpgrade";
             this.btnUpgrade.Size = new System.Drawing.Size(75, 23);
@@ -257,6 +261,7 @@ namespace SimulatorApk
             // 
             this.lbUpgradeLvl.AutoSize = true;
             this.lbUpgradeLvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbUpgradeLvl.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lbUpgradeLvl.Location = new System.Drawing.Point(132, 213);
             this.lbUpgradeLvl.Name = "lbUpgradeLvl";
             this.lbUpgradeLvl.Size = new System.Drawing.Size(102, 18);
@@ -267,6 +272,7 @@ namespace SimulatorApk
             // 
             this.UpgradeLvl.AutoSize = true;
             this.UpgradeLvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.UpgradeLvl.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.UpgradeLvl.Location = new System.Drawing.Point(240, 213);
             this.UpgradeLvl.Name = "UpgradeLvl";
             this.UpgradeLvl.Size = new System.Drawing.Size(0, 18);

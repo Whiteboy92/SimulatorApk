@@ -115,6 +115,8 @@ namespace SimulatorApk
             // 
             // btnRollValues
             // 
+            this.btnRollValues.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRollValues.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnRollValues.Location = new System.Drawing.Point(120, 259);
             this.btnRollValues.Name = "btnRollValues";
             this.btnRollValues.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +124,7 @@ namespace SimulatorApk
             this.btnRollValues.Text = "Roll Values";
             this.btnRollValues.UseVisualStyleBackColor = true;
             this.btnRollValues.Click += new System.EventHandler(this.BtnRollValues_Click);
+            this.btnRollValues.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // tbItemStats
             // 
@@ -147,6 +150,7 @@ namespace SimulatorApk
             this.Controls.Add(this.button2);
             this.Name = "ItemSelectionMenu";
             this.Text = "ItemSelectionMenu";
+            this.Shown += new System.EventHandler(this.ItemSelectionMenu_Shown);
             this.ResumeLayout(false);
 
         }

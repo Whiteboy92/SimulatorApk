@@ -3,7 +3,6 @@ using System;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 
-// disable button rarity and upgrade if not selected an item !!!
 namespace SimulatorApk
 {
     public partial class ItemUpgradeMenu : Form
@@ -20,6 +19,8 @@ namespace SimulatorApk
             pbItemUpgrade.Image = SharedClass.ImageToDisplay;
             UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
             lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+
+            RarityStats.CreateInstance();
         }
 
 
@@ -66,7 +67,7 @@ namespace SimulatorApk
         private void ItemUpgradeMenu_Shown(object sender, EventArgs e)
         {
             _ = GetImage();
-            _ = GetIndex();
+            _ = GetUpgradeLevel();
         }
 
 
@@ -79,7 +80,7 @@ namespace SimulatorApk
         }
 
 
-        public Equipment GetIndex()
+        public Equipment GetUpgradeLevel()
         {
             return SharedClass.UpgradeLvlValue;
         }
