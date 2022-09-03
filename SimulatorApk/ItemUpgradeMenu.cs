@@ -37,6 +37,7 @@ namespace SimulatorApk
             PowderNeeded.Text = ((1 + x) * 150).ToString();
         }
 
+
         public bool IsEqScroll
         {
             get
@@ -51,6 +52,7 @@ namespace SimulatorApk
                 }
             }
         }  
+
 
         public bool IsEqAmulet
         {
@@ -123,8 +125,6 @@ namespace SimulatorApk
 
 
         // Upgrade system
-        // Stuff to be implemented
-        // destroying items, reset button
         private async void BtnUpgrade_Click(object sender, EventArgs e)
         {
             // without any safety items
@@ -152,6 +152,7 @@ namespace SimulatorApk
                 }
             }
 
+
             // with eq scroll only
             else if (IsEqScroll == true & IsEqAmulet == false)
             {
@@ -178,6 +179,7 @@ namespace SimulatorApk
                     ScrollUsed();
                 }
             }
+
 
             // with amulet only
             else if (IsEqScroll == false & IsEqAmulet == true)
@@ -234,6 +236,7 @@ namespace SimulatorApk
                 }
             }
         }
+
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
