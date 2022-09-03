@@ -17,7 +17,7 @@ namespace SimulatorApk
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MyMain());
+            Application.Run(new MainMenu());
 
 
         }

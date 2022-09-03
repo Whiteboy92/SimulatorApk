@@ -46,8 +46,9 @@ namespace SimulatorApk
             await Task.Delay(50);
             Gambling();
             lbRarityDisplay.BackColor = Color.Green;
-            RarityStats.ClearInstances();
-            RarityStats.CreateInstance();
+            RarityStats.ClearInstances2();
+            string x = SharedClass.ItemId;
+            RarityStats.CreateInstance(x);
             DisplayRarityStats();
         }
 

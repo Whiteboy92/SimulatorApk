@@ -7,8 +7,11 @@ namespace SimulatorApk
 {
     public partial class ItemUpgradeMenu : Form
     {
-        public ItemUpgradeMenu()
+        private readonly MainMenu _mainMenu;
+
+        public ItemUpgradeMenu(MainMenu mainMenu)
         {
+            _mainMenu = mainMenu;
             InitializeComponent();
             UpgradeMats();
         }
@@ -21,6 +24,7 @@ namespace SimulatorApk
             lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
 
             RarityStats.CreateInstance();
+            _mainMenu.EnableBtnRarity();
         }
 
 

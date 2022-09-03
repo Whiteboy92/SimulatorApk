@@ -11,20 +11,20 @@ namespace SimulatorApk
 
         public static Dictionary<string, RarityStats> RarityBonus { get; } = new();
 
-        private double ArmorPenetration { get; set; }
-        private double BonusHitRate { get; set; }
-        private double BonusBasicDmg { get; set; }
-        private double BonusCritChance { get; set; }
-        private double StunChance { get; set; }
-        private double ElementalDmg { get; set; }
-        private double BonusDmg { get; set; }
-        private double HighLvlMonsterDmg { get; set; }
-        private double LowLvlMonsterDmg { get; set; }
+        private int ArmorPenetration { get; set; }
+        private int BonusHitRate { get; set; }
+        private int BonusBasicDmg { get; set; }
+        private int BonusCritChance { get; set; }
+        private int StunChance { get; set; }
+        private int ElementalDmg { get; set; }
+        private int BonusDmg { get; set; }
+        private int HighLvlMonsterDmg { get; set; }
+        private int LowLvlMonsterDmg { get; set; }
 
 
         // RarityStats constructor
-        private RarityStats(double armorPen, double hitRate, double basicDmg, double critChance, double stunChance,
-                            double elementalDmg, double dmg, double highMonster, double lowMonster)
+        private RarityStats(int armorPen, int hitRate, int basicDmg, int critChance, int stunChance,
+                            int elementalDmg, int dmg, int highMonster, int lowMonster)
         {
             ArmorPenetration = armorPen;
             BonusHitRate = hitRate;
@@ -52,15 +52,14 @@ namespace SimulatorApk
                    " LowLvlMonsterDmg: " + LowLvlMonsterDmg;
         }
 
-        private static double GetRandomNumber(double minimum, double maximum)
-        {
-            return random.NextDouble() * (maximum - minimum) + minimum;
-        }
-
 
         public static void ClearInstances()
         {
             File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity.txt");
+        }
+        public static void ClearInstances2()
+        {
+            File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity2.txt");
         }
 
 
@@ -89,17 +88,17 @@ namespace SimulatorApk
         }
 
 
-        /* Creating rarity stats and values
-        public static void CreateInstance(int x)
+        // Overload Changing rarity and stats for just selected item
+        public static void CreateInstance(string s)
         {
             string strSeperator = ";";
             StringBuilder sbOutput = new();
             _ = new Random();
 
-            for (var i = 1; i <= 5; i++)
-            {
-                RarityBonus["button" + i] = new RarityStats(
-                    armorPen:        random.Next(12 * x, 22 * x),
+            int x = SharedClass.RarityLvlValue.Rarity;
+            
+                RarityBonus[s] = new RarityStats(
+                    armorPen:       random.Next(12 * x, 22 * x),
                     hitRate:        random.Next(100 * x, 250 * x),
                     basicDmg:       random.Next(300 * x, 900 * x),
                     critChance:     random.Next(4 * x, 11 * x),
@@ -108,9 +107,9 @@ namespace SimulatorApk
                     dmg:            random.Next(8 * x, 18 * x),
                     highMonster:    random.Next(17 * x, 29 * x),
                     lowMonster:     random.Next(14 * x, 32 * x));
-            }
+
             sbOutput.AppendLine(string.Join(strSeperator, RarityBonus));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity2.txt", sbOutput.ToString());
-        }*/
+        }
     }
 }

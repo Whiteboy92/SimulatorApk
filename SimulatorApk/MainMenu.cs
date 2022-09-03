@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Drawing;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 
 namespace SimulatorApk
 {
-    public sealed partial class MyMain : Form
+    public sealed partial class MainMenu : Form
     {
         //Fields
         private Form _activeForm;
 
-        public MyMain()
+        public MainMenu()
         {
             InitializeComponent();
         }
@@ -21,6 +20,8 @@ namespace SimulatorApk
         private void MyMain_Load(object sender, EventArgs e)
         {
             Equipment.CreateInstance();
+            btnUpgrade.Enabled = false;
+            btnRarity.Enabled = false;
         }
 
 
@@ -37,26 +38,34 @@ namespace SimulatorApk
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.panelDesktop.Controls.Add(childForm);
-            this.panelDesktop.Tag = childForm;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
 
- 
+        public void EnableBtnUpgrade()
+        {
+            btnUpgrade.Enabled = true;
+        }
+
+        public void EnableBtnRarity()
+        {
+            btnRarity.Enabled = true;
         }
 
 
         private void BtnItemSelect_Click(object sender, EventArgs e)
         {
             btnItemSelect.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Selection_Click.png");
-            OpenChildForm(new ItemSelectionMenu(), sender);
+            OpenChildForm(new ItemSelectionMenu(this), sender);
         }
 
 
         private void BtnUpgrade_Click(object sender, EventArgs e)
         {
             btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Upgrade_Click.png");
-            OpenChildForm(new ItemUpgradeMenu(), sender);
+            OpenChildForm(new ItemUpgradeMenu(this), sender);
         }
 
 

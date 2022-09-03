@@ -116,11 +116,11 @@
     <Compile Include="ItemUpgradeMenu.Designer.cs">
       <DependentUpon>ItemUpgradeMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyMain.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyMain.Designer.cs">
-      <DependentUpon>MyMain.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="ItemUpgradeMenu.resx">
       <DependentUpon>ItemUpgradeMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyMain.resx">
-      <DependentUpon>MyMain.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

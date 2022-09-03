@@ -1,6 +1,6 @@
 ﻿namespace SimulatorApk
 {
-    sealed partial class MyMain
+    sealed partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labItemRarity = new System.Windows.Forms.Label();
             this.labItemUpgrade = new System.Windows.Forms.Label();
@@ -144,7 +144,7 @@
             this.panelDesktop.Size = new System.Drawing.Size(1034, 611);
             this.panelDesktop.TabIndex = 1;
             // 
-            // MyMain
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "MyMain";
+            this.Name = "MainMenu";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MyMain_Load);
             this.panel1.ResumeLayout(false);
@@ -168,13 +168,11 @@
 
         private System.Windows.Forms.Label labItemSelect;
 
-        private System.Windows.Forms.Button btnUpgrade;
-        private System.Windows.Forms.Button btnRarity;
-
-        private System.Windows.Forms.Button btnItemSelect;
-
         private System.Windows.Forms.Panel panel1;
 
         #endregion
+        private System.Windows.Forms.Button btnRarity;
+        private System.Windows.Forms.Button btnItemSelect;
+        public System.Windows.Forms.Button btnUpgrade;
     }
 }
