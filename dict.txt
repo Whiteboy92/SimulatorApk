@@ -236,3 +236,29 @@ button5: Dmg: 985 - 5550
  CritDmg: 334
  Rarity: 2
  Upgrade Lvl: 0]
+[button1,  Dmg: 294 - 1094
+ HitRate: 331
+ CritChance: 8
+ CritDmg: 239
+ Rarity: 2
+ Upgrade Lvl: 0];[button2,  Dmg: 626 - 1353
+ HitRate: 242
+ CritChance: 9
+ CritDmg: 185
+ Rarity: 2
+ Upgrade Lvl: 0];[button3,  Dmg: 655 - 2001
+ HitRate: 902
+ CritChance: 11
+ CritDmg: 364
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 1320 - 3325
+ HitRate: 950
+ CritChance: 12
+ CritDmg: 370
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 2242 - 3974
+ HitRate: 1285
+ CritChance: 17
+ CritDmg: 192
+ Rarity: 1
+ Upgrade Lvl: 0]

@@ -63,27 +63,33 @@ namespace SimulatorApk
         }
 
 
+        private static int GetRandomNumberFromRange(int min, int max)
+        {
+            _ = new Random();
+            return Random.Next(min, max);
+        }
+
         // Creating rarity stats and values
         public static void CreateInstance()
         {
-            string strSeparator = ";";
+            const string separator = ";";
             StringBuilder sbOutput = new();
             _ = new Random();
 
             for (var i = 1; i <= 5; i++)
             {
                 RarityBonus["button"+i] = new RarityStats(
-                    armorPen:       Random.Next(12, 22),
-                    hitRate:        Random.Next(100, 250),
-                    basicDmg:       Random.Next(300, 900),
-                    critChance:     Random.Next(4, 11),
-                    stunChance:     Random.Next(1, 4),
-                    elementalDmg:   Random.Next(150, 900),
-                    dmg:            Random.Next(8, 18),
-                    highMonster:    Random.Next(17, 29),
-                    lowMonster:     Random.Next(14, 32));
+                    armorPen:       GetRandomNumberFromRange(12, 22),
+                    hitRate:        GetRandomNumberFromRange(100, 250),
+                    basicDmg:       GetRandomNumberFromRange(300, 900),
+                    critChance:     GetRandomNumberFromRange(4, 11),
+                    stunChance:     GetRandomNumberFromRange(1, 4),
+                    elementalDmg:   GetRandomNumberFromRange(150, 900),
+                    dmg:            GetRandomNumberFromRange(8, 18),
+                    highMonster:    GetRandomNumberFromRange(17, 29),
+                    lowMonster:     GetRandomNumberFromRange(14, 32));
             } 
-            sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
+            sbOutput.AppendLine(string.Join(separator, RarityBonus));
             File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity.txt", sbOutput.ToString());
         }
 
@@ -91,24 +97,24 @@ namespace SimulatorApk
         // Overload Changing rarity and stats for just selected item
         public static void CreateInstance(string s)
         {
-            string strSeparator = ";";
+            const string separator = ";";
             StringBuilder sbOutput = new();
             _ = new Random();
 
             var x = SharedClass.RarityLvlValue.Rarity;
             
                 RarityBonus[s] = new RarityStats(
-                    armorPen:       Random.Next(12 * x, 22 * x),
-                    hitRate:        Random.Next(100 * x, 250 * x),
-                    basicDmg:       Random.Next(300 * x, 900 * x),
-                    critChance:     Random.Next(4 * x, 11 * x),
-                    stunChance:     Random.Next(1 * x, 4 * x),
-                    elementalDmg:   Random.Next(150 * x, 900 * x),
-                    dmg:            Random.Next(8 * x, 18 * x),
-                    highMonster:    Random.Next(17 * x, 29 * x),
-                    lowMonster:     Random.Next(14 * x, 32 * x));
+                    armorPen:       GetRandomNumberFromRange(12 * x, 22 * x),
+                    hitRate:        GetRandomNumberFromRange(100 * x, 250 * x),
+                    basicDmg:       GetRandomNumberFromRange(300 * x, 900 * x),
+                    critChance:     GetRandomNumberFromRange(4 * x, 11 * x),
+                    stunChance:     GetRandomNumberFromRange(1 * x, 4 * x),
+                    elementalDmg:   GetRandomNumberFromRange(150 * x, 900 * x),
+                    dmg:            GetRandomNumberFromRange(8 * x, 18 * x),
+                    highMonster:    GetRandomNumberFromRange(17 * x, 29 * x),
+                    lowMonster:     GetRandomNumberFromRange(14 * x, 32 * x));
 
-            sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
+            sbOutput.AppendLine(string.Join(separator, RarityBonus));
             File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity2.txt", sbOutput.ToString());
         }
     }
