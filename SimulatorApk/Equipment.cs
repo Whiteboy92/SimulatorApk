@@ -4,9 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-// fixes
-// disable button rarity and upgrade if not selected an item
-
 namespace SimulatorApk
 {
     public class Equipment : IEquatable<Equipment>
