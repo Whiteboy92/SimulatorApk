@@ -43,13 +43,11 @@ namespace SimulatorApk
         {
             return other is not null && ReferenceEquals(this, other);
         }
+        
 
-
-        public override bool Equals(object obj)
+        public override bool Equals(object other)
         {
-            if (obj is null) return false;
-            if (!ReferenceEquals(this, obj)) return obj.GetType() == GetType() && Equals((Equipment)obj);
-            return true;
+            return Equals(other as Equipment);
         }
 
 
@@ -70,12 +68,6 @@ namespace SimulatorApk
             CritDmg = critDmg;
             Rarity = rarity;
             UpgradeLevel = upgradeLvl;
-        }
-
-
-        public static void ClearInstances()
-        {
-            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict.txt");
         }
 
 
@@ -112,7 +104,7 @@ namespace SimulatorApk
         public static void CreateInstance(string s)
         {
             const string separator = ";";
-            StringBuilder sbOutput = new();
+            StringBuilder sbOutput = new(); 
             var random = new Random();
 
             s ??= "button1";

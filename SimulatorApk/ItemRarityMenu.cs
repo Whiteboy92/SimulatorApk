@@ -30,7 +30,7 @@ namespace SimulatorApk
             Gambling();
             lbRarityDisplay.BackColor = Color.Green;
             RarityStats.ClearInstances2();
-            string x = SharedClass.ItemId;
+            var x = SharedClass.ItemId;
             RarityStats.CreateInstance(x);
             DisplayRarityStats();
         }
@@ -50,45 +50,30 @@ namespace SimulatorApk
             var random = new Random();
             var num = random.Next(1, 100);
 
-            if (num <= 1 & num > 0)         //1%
+            SharedClass.RarityLvlValue.Rarity = num switch
             {
-                SharedClass.RarityLvlValue.Rarity = 8;
-            }
-            else if (num <= 4 & num > 1)    //3%
-            {
-                SharedClass.RarityLvlValue.Rarity = 7;
-            }
-            else if (num <= 9 & num > 4)    //5%
-            {
-                SharedClass.RarityLvlValue.Rarity = 6;
-            }
-            else if (num <= 16 & num > 9)   //7%
-            {
-                SharedClass.RarityLvlValue.Rarity = 5;
-            }
-            else if (num <= 26 & num > 16)  //10%
-            {
-                SharedClass.RarityLvlValue.Rarity = 4;
-            }
-            else if (num <= 40 & num > 26)  //14%
-            {
-                SharedClass.RarityLvlValue.Rarity = 3;
-            }
-            else if (num <= 58 & num > 40)  //18%
-            {
-                SharedClass.RarityLvlValue.Rarity = 2;
-            }
-            else if (num <= 78 & num > 58)  //20%
-            {
-                SharedClass.RarityLvlValue.Rarity = 1;
-            }
-            else if (num <= 100 & num > 78) //22%
-            {
-                SharedClass.RarityLvlValue.Rarity = 0;
-            }
+                //1%
+                <= 1 and > 0 => 8,
+                //3%
+                <= 4 and > 1 => 7,
+                //5%
+                <= 9 and > 4 => 6,
+                //7%
+                <= 16 and > 9 => 5,
+                //10%
+                <= 26 and > 16 => 4,
+                //14%
+                <= 40 and > 26 => 3,
+                //18%
+                <= 58 and > 40 => 2,
+                //20%
+                <= 78 and > 58 => 1,
+                //22%
+                <= 100 and > 78 => 0,
+                _ => SharedClass.RarityLvlValue.Rarity
+            };
 
             lbRarityDisplay.Text = SharedClass.RarityLvlValue.Rarity.ToString();
-
             DisplayRarityStats();
         }
     }

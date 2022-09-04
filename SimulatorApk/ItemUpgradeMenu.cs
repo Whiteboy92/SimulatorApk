@@ -96,7 +96,7 @@ namespace SimulatorApk
                         SharedClass.UpgradeLvlValue.UpgradeLevel++;
                         lbUpgradeOutput.Text = "Upgrade succeed";
                         lbUpgradeOutput.BackColor = Color.Green;
-                        UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
+                        UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel;
                         UpgradeMats();
                         TotalMaterials();
                     }
