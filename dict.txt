@@ -54,3 +54,185 @@ button5: Dmg: 985 - 5550
  CritDmg: 247
  Rarity: 1
  Upgrade Lvl: 0]
+[button1,  Dmg: 156 - 558
+ HitRate: 236
+ CritChance: 9
+ CritDmg: 406
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 820 - 1121
+ HitRate: 373
+ CritChance: 9
+ CritDmg: 395
+ Rarity: 2
+ Upgrade Lvl: 0];[button3,  Dmg: 558 - 2349
+ HitRate: 1003
+ CritChance: 15
+ CritDmg: 242
+ Rarity: 1
+ Upgrade Lvl: 0];[button4,  Dmg: 688 - 3922
+ HitRate: 782
+ CritChance: 14
+ CritDmg: 187
+ Rarity: 1
+ Upgrade Lvl: 0];[button5,  Dmg: 1125 - 5197
+ HitRate: 1381
+ CritChance: 19
+ CritDmg: 219
+ Rarity: 1
+ Upgrade Lvl: 0]
+[button1,  Dmg: 311 - 1185
+ HitRate: 230
+ CritChance: 9
+ CritDmg: 196
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 892 - 1538
+ HitRate: 281
+ CritChance: 21
+ CritDmg: 347
+ Rarity: 1
+ Upgrade Lvl: 0];[button3,  Dmg: 1284 - 2159
+ HitRate: 576
+ CritChance: 17
+ CritDmg: 448
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 756 - 3088
+ HitRate: 1351
+ CritChance: 20
+ CritDmg: 394
+ Rarity: 1
+ Upgrade Lvl: 0];[button5,  Dmg: 1844 - 3057
+ HitRate: 1374
+ CritChance: 9
+ CritDmg: 439
+ Rarity: 2
+ Upgrade Lvl: 0]
+[button1,  Dmg: 309 - 980
+ HitRate: 173
+ CritChance: 14
+ CritDmg: 224
+ Rarity: 2
+ Upgrade Lvl: 0];[button2,  Dmg: 998 - 1380
+ HitRate: 643
+ CritChance: 20
+ CritDmg: 321
+ Rarity: 1
+ Upgrade Lvl: 0];[button3,  Dmg: 838 - 3402
+ HitRate: 800
+ CritChance: 11
+ CritDmg: 300
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 1039 - 2623
+ HitRate: 1363
+ CritChance: 19
+ CritDmg: 319
+ Rarity: 1
+ Upgrade Lvl: 0];[button5,  Dmg: 1601 - 5724
+ HitRate: 833
+ CritChance: 21
+ CritDmg: 189
+ Rarity: 1
+ Upgrade Lvl: 0]
+[button1,  Dmg: 165 - 592
+ HitRate: 298
+ CritChance: 13
+ CritDmg: 250
+ Rarity: 2
+ Upgrade Lvl: 0];[button2,  Dmg: 837 - 1596
+ HitRate: 623
+ CritChance: 15
+ CritDmg: 294
+ Rarity: 1
+ Upgrade Lvl: 0];[button3,  Dmg: 804 - 2699
+ HitRate: 563
+ CritChance: 11
+ CritDmg: 398
+ Rarity: 1
+ Upgrade Lvl: 0];[button4,  Dmg: 741 - 2808
+ HitRate: 647
+ CritChance: 21
+ CritDmg: 333
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 2143 - 2865
+ HitRate: 521
+ CritChance: 13
+ CritDmg: 224
+ Rarity: 1
+ Upgrade Lvl: 0]
+[button1,  Dmg: 171 - 1125
+ HitRate: 114
+ CritChance: 16
+ CritDmg: 310
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 695 - 1654
+ HitRate: 206
+ CritChance: 18
+ CritDmg: 306
+ Rarity: 1
+ Upgrade Lvl: 0];[button3,  Dmg: 1321 - 2819
+ HitRate: 736
+ CritChance: 11
+ CritDmg: 368
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 876 - 2455
+ HitRate: 922
+ CritChance: 14
+ CritDmg: 349
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 985 - 5591
+ HitRate: 1119
+ CritChance: 8
+ CritDmg: 379
+ Rarity: 1
+ Upgrade Lvl: 0]
+[button1,  Dmg: 245 - 712
+ HitRate: 154
+ CritChance: 8
+ CritDmg: 288
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 648 - 1863
+ HitRate: 631
+ CritChance: 15
+ CritDmg: 254
+ Rarity: 2
+ Upgrade Lvl: 0];[button3,  Dmg: 479 - 2747
+ HitRate: 834
+ CritChance: 17
+ CritDmg: 303
+ Rarity: 1
+ Upgrade Lvl: 0];[button4,  Dmg: 745 - 3785
+ HitRate: 567
+ CritChance: 11
+ CritDmg: 306
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 1746 - 3804
+ HitRate: 1305
+ CritChance: 9
+ CritDmg: 260
+ Rarity: 1
+ Upgrade Lvl: 0]
+[button1,  Dmg: 413 - 1066
+ HitRate: 155
+ CritChance: 13
+ CritDmg: 275
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 513 - 2104
+ HitRate: 476
+ CritChance: 8
+ CritDmg: 309
+ Rarity: 1
+ Upgrade Lvl: 0];[button3,  Dmg: 484 - 2088
+ HitRate: 1013
+ CritChance: 18
+ CritDmg: 210
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 1120 - 2235
+ HitRate: 820
+ CritChance: 20
+ CritDmg: 282
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 1030 - 4479
+ HitRate: 1099
+ CritChance: 19
+ CritDmg: 334
+ Rarity: 2
+ Upgrade Lvl: 0]

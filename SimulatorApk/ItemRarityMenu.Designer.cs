@@ -36,7 +36,7 @@ namespace SimulatorApk
             this.lbRarity = new System.Windows.Forms.Label();
             this.lbRarityDisplay = new System.Windows.Forms.Label();
             this.tbRarityBonuses = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItemRarity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbItemRarity)).BeginInit();
             this.SuspendLayout();
             // 
             // pbItemRarity
@@ -90,7 +90,7 @@ namespace SimulatorApk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (51)))), ((int) (((byte) (73)))));
             this.ClientSize = new System.Drawing.Size(1018, 572);
             this.Controls.Add(this.tbRarityBonuses);
             this.Controls.Add(this.lbRarityDisplay);
@@ -100,10 +100,8 @@ namespace SimulatorApk
             this.Name = "ItemRarityMenu";
             this.Text = "ItemRarityMenu";
             this.Load += new System.EventHandler(this.ItemRarityMenu_Load);
-            this.Shown += new System.EventHandler(this.ItemRarityMenu_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pbItemRarity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbItemRarity)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

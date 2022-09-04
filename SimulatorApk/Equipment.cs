@@ -79,7 +79,7 @@ namespace SimulatorApk
         }
 
 
-        public static void ClearInstances2()
+        public static void ClearInstancesOne()
         {
             File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict2.txt");
         }
@@ -88,7 +88,7 @@ namespace SimulatorApk
         // creates instance of Equipment class and assigns it's parameters
         public static void CreateInstance()
         {
-            string strSeparator = ";";
+            const string separator = ";";
             StringBuilder sbOutput = new();
             var random = new Random();
 
@@ -103,7 +103,7 @@ namespace SimulatorApk
                     rarity: random.Next(1, 3),
                     upgradeLvl: random.Next(0, 0));
             }
-            sbOutput.AppendLine(string.Join(strSeparator, Equipments));
+            sbOutput.AppendLine(string.Join(separator, Equipments));
             File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict.txt", sbOutput.ToString());
         }
 
@@ -111,7 +111,7 @@ namespace SimulatorApk
         // overload, changing values of just selected item of Equipment
         public static void CreateInstance(string s)
         {
-            const string strSeparator = ";";
+            const string separator = ";";
             StringBuilder sbOutput = new();
             var random = new Random();
 
@@ -128,7 +128,7 @@ namespace SimulatorApk
                 rarity: random.Next(1, 3),
                 upgradeLvl: random.Next(0, 0));
 
-            sbOutput.AppendLine(string.Join(strSeparator, Equipments));
+            sbOutput.AppendLine(string.Join(separator, Equipments));
             File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict2.txt", sbOutput.ToString());
         }
 

@@ -17,27 +17,7 @@ namespace SimulatorApk
             //Equipment.EqList();
             _mainMenu = mainMenu;
         }
-
-
-        private void ItemSelectionMenu_Shown(object sender, EventArgs e)
-        {
-            _ = GetRarity();
-            _ = GetItemId();
-        }
-
-
-        private string GetItemId()
-        {
-            return SharedClass.ItemId;
-        }
-
-
-        private Equipment GetRarity()
-        {
-            return SharedClass.RarityLvlValue;
-        }
-
-
+        
 
         private void Button_MouseLeave(object sender, EventArgs e)
         {
@@ -49,7 +29,7 @@ namespace SimulatorApk
         private void BtnRollValues_Click(object sender, EventArgs e)
         {
             var x = SharedClass.ItemId;
-            Equipment.ClearInstances2();
+            Equipment.ClearInstancesOne();
             Equipment.CreateInstance(x);
             BtnViewStats_Click(sender);
         }

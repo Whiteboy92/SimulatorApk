@@ -151,7 +151,6 @@ namespace SimulatorApk
             this.Controls.Add(this.button2);
             this.Name = "ItemSelectionMenu";
             this.Text = "ItemSelectionMenu";
-            this.Shown += new System.EventHandler(this.ItemSelectionMenu_Shown);
             this.ResumeLayout(false);
 
         }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SimulatorApk
 {
-    class RarityStats
+    internal class RarityStats
     {
-        private static readonly Random random = new();
+        private static readonly Random Random = new();
 
         public static Dictionary<string, RarityStats> RarityBonus { get; } = new();
 
@@ -73,15 +73,15 @@ namespace SimulatorApk
             for (var i = 1; i <= 5; i++)
             {
                 RarityBonus["button"+i] = new RarityStats(
-                    armorPen:       random.Next(12, 22),
-                    hitRate:        random.Next(100, 250),
-                    basicDmg:       random.Next(300, 900),
-                    critChance:     random.Next(4, 11),
-                    stunChance:     random.Next(1, 4),
-                    elementalDmg:   random.Next(150, 900),
-                    dmg:            random.Next(8, 18),
-                    highMonster:    random.Next(17, 29),
-                    lowMonster:     random.Next(14, 32));
+                    armorPen:       Random.Next(12, 22),
+                    hitRate:        Random.Next(100, 250),
+                    basicDmg:       Random.Next(300, 900),
+                    critChance:     Random.Next(4, 11),
+                    stunChance:     Random.Next(1, 4),
+                    elementalDmg:   Random.Next(150, 900),
+                    dmg:            Random.Next(8, 18),
+                    highMonster:    Random.Next(17, 29),
+                    lowMonster:     Random.Next(14, 32));
             } 
             sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
             File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity.txt", sbOutput.ToString());
@@ -98,15 +98,15 @@ namespace SimulatorApk
             var x = SharedClass.RarityLvlValue.Rarity;
             
                 RarityBonus[s] = new RarityStats(
-                    armorPen:       random.Next(12 * x, 22 * x),
-                    hitRate:        random.Next(100 * x, 250 * x),
-                    basicDmg:       random.Next(300 * x, 900 * x),
-                    critChance:     random.Next(4 * x, 11 * x),
-                    stunChance:     random.Next(1 * x, 4 * x),
-                    elementalDmg:   random.Next(150 * x, 900 * x),
-                    dmg:            random.Next(8 * x, 18 * x),
-                    highMonster:    random.Next(17 * x, 29 * x),
-                    lowMonster:     random.Next(14 * x, 32 * x));
+                    armorPen:       Random.Next(12 * x, 22 * x),
+                    hitRate:        Random.Next(100 * x, 250 * x),
+                    basicDmg:       Random.Next(300 * x, 900 * x),
+                    critChance:     Random.Next(4 * x, 11 * x),
+                    stunChance:     Random.Next(1 * x, 4 * x),
+                    elementalDmg:   Random.Next(150 * x, 900 * x),
+                    dmg:            Random.Next(8 * x, 18 * x),
+                    highMonster:    Random.Next(17 * x, 29 * x),
+                    lowMonster:     Random.Next(14 * x, 32 * x));
 
             sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
             File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity2.txt", sbOutput.ToString());

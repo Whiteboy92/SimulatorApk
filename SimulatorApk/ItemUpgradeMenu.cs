@@ -20,7 +20,7 @@ namespace SimulatorApk
         private void ItemUpgradeMenu_Load(object sender, EventArgs e)
         {
             pbItemUpgrade.Image = SharedClass.ImageToDisplay;
-            UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
+            UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel;
             lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
 
             RarityStats.CreateInstance();
@@ -44,25 +44,6 @@ namespace SimulatorApk
         private bool IsEqAmulet => cBoxAmulet.Checked;
 
 
-        private void ItemUpgradeMenu_Shown(object sender, EventArgs e)
-        {
-            _ = GetImage();
-            _ = GetUpgradeLevel();
-        }
-
-
-        Image GetImage()
-        {
-            return SharedClass.ImageToDisplay;
-        }
-
-
-        private Equipment GetUpgradeLevel()
-        {
-            return SharedClass.UpgradeLvlValue;
-        }
-
-
         //Add up total materials used for upgrades
         private void TotalMaterials()
         {
@@ -83,7 +64,7 @@ namespace SimulatorApk
         // Add up all amulets used and display it in label
         private void AmuletUsed()
         {
-            int j = 1;
+            const int j = 1;
             int.TryParse(TotalAmuletsUsed.Text, out var i);
             TotalAmuletsUsed.Text = (i + j).ToString();
         }
@@ -92,7 +73,7 @@ namespace SimulatorApk
         // Add up all Scrolls used and display it in label
         private void ScrollUsed()
         {
-            int j = 1;
+            const int j = 1;
             int.TryParse(TotalScrollsUsed.Text, out var i);
             TotalScrollsUsed.Text = (i + j).ToString();
         }
@@ -101,112 +82,118 @@ namespace SimulatorApk
         // Upgrade system
         private async void BtnUpgrade_Click(object sender, EventArgs e)
         {
-            // without any safety items
-            if (IsEqScroll == false & IsEqAmulet == false)
+            switch (IsEqScroll)
             {
-                var random = new Random();
-                var num = random.Next(1, 1000);
-                if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
+                // without any safety items
+                case false when IsEqAmulet == false:
                 {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(50);
-                    SharedClass.UpgradeLvlValue.UpgradeLevel++;
-                    lbUpgradeOutput.Text = "Upgrade succeed";
-                    lbUpgradeOutput.BackColor = Color.Green;
-                    UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
-                    UpgradeMats();
-                    TotalMaterials();
+                    var random = new Random();
+                    var num = random.Next(1, 1000);
+                    if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(50);
+                        SharedClass.UpgradeLvlValue.UpgradeLevel++;
+                        lbUpgradeOutput.Text = "Upgrade succeed";
+                        lbUpgradeOutput.BackColor = Color.Green;
+                        UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
+                        UpgradeMats();
+                        TotalMaterials();
+                    }
+                    else
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(50);
+                        lbUpgradeOutput.Text = "Upgrade failed";
+                        lbUpgradeOutput.BackColor = Color.Red;
+                    }
+
+                    break;
                 }
-                else
+                // with eq scroll only
+                case true when IsEqAmulet == false:
                 {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(50);
-                    lbUpgradeOutput.Text = "Upgrade failed";
-                    lbUpgradeOutput.BackColor = Color.Red;
+                    var random = new Random();
+                    var num = random.Next(1, 1000);
+
+                    if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(50);
+                        SharedClass.UpgradeLvlValue.UpgradeLevel++;
+                        lbUpgradeOutput.Text = "Upgrade succeed";
+                        lbUpgradeOutput.BackColor = Color.Green;
+                        UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
+                        UpgradeMats();
+                        TotalMaterials();
+                    }
+                    else
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(50);
+                        lbUpgradeOutput.Text = "Upgrade failed";
+                        lbUpgradeOutput.BackColor = Color.Red;
+                        ScrollUsed();
+                    }
+
+                    break;
                 }
-            }
-
-
-            // with eq scroll only
-            else if (IsEqScroll == true & IsEqAmulet == false)
-            {
-                var random = new Random();
-                var num = random.Next(1, 1000);
-
-                if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
+                // with amulet only
+                case false when IsEqAmulet == true:
                 {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(50);
-                    SharedClass.UpgradeLvlValue.UpgradeLevel++;
-                    lbUpgradeOutput.Text = "Upgrade succeed";
-                    lbUpgradeOutput.BackColor = Color.Green;
-                    UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
-                    UpgradeMats();
-                    TotalMaterials();
+                    var random = new Random();
+                    var num = random.Next(1, 1000);
+
+                    if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(25);
+                        SharedClass.UpgradeLvlValue.UpgradeLevel++;
+                        lbUpgradeOutput.Text = "Upgrade succeed";
+                        lbUpgradeOutput.BackColor = Color.Green;
+                        UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
+                        UpgradeMats();
+                        TotalMaterials();
+                    }
+                    else
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(25);
+                        lbUpgradeOutput.Text = "Upgrade failed";
+                        lbUpgradeOutput.BackColor = Color.Red;
+                        AmuletUsed();
+                    }
+
+                    break;
                 }
-                else
+                //with all the safety items
+                default:
                 {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(50);
-                    lbUpgradeOutput.Text = "Upgrade failed";
-                    lbUpgradeOutput.BackColor = Color.Red;
-                    ScrollUsed();
-                }
-            }
+                    var random = new Random();
+                    var num = random.Next(1, 1000);
 
+                    if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(25);
+                        SharedClass.UpgradeLvlValue.UpgradeLevel++;
+                        lbUpgradeOutput.Text = "Upgrade succeed";
+                        lbUpgradeOutput.BackColor = Color.Green;
+                        UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
+                        UpgradeMats();
+                        TotalMaterials();
+                    }
+                    else
+                    {
+                        lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
+                        await Task.Delay(25);
+                        lbUpgradeOutput.Text = "Upgrade failed";
+                        lbUpgradeOutput.BackColor = Color.Red;
+                        AmuletUsed();
+                        ScrollUsed();
+                    }
 
-            // with amulet only
-            else if (IsEqScroll == false & IsEqAmulet == true)
-            {
-                var random = new Random();
-                var num = random.Next(1, 1000);
-
-                if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
-                {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(25);
-                    SharedClass.UpgradeLvlValue.UpgradeLevel++;
-                    lbUpgradeOutput.Text = "Upgrade succeed";
-                    lbUpgradeOutput.BackColor = Color.Green;
-                    UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
-                    UpgradeMats();
-                    TotalMaterials();
-                }
-                else
-                {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(25);
-                    lbUpgradeOutput.Text = "Upgrade failed";
-                    lbUpgradeOutput.BackColor = Color.Red;
-                    AmuletUsed();
-                }
-            }
-
-            //with all the safety items
-            else
-            {
-                var random = new Random();
-                var num = random.Next(1, 1000);
-
-                if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
-                {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(25);
-                    SharedClass.UpgradeLvlValue.UpgradeLevel++;
-                    lbUpgradeOutput.Text = "Upgrade succeed";
-                    lbUpgradeOutput.BackColor = Color.Green;
-                    UpgradeLvl.Text = "+ " + SharedClass.UpgradeLvlValue.UpgradeLevel.ToString();
-                    UpgradeMats();
-                    TotalMaterials();
-                }
-                else
-                {
-                    lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
-                    await Task.Delay(25);
-                    lbUpgradeOutput.Text = "Upgrade failed";
-                    lbUpgradeOutput.BackColor = Color.Red;
-                    AmuletUsed();
-                    ScrollUsed();
+                    break;
                 }
             }
         }
@@ -214,7 +201,7 @@ namespace SimulatorApk
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            int x = SharedClass.UpgradeLvlValue.UpgradeLevel;
+            var x = SharedClass.UpgradeLvlValue.UpgradeLevel;
             GoldNeeded.Text = ((1 + x) * 750).ToString();
             GemNeeded.Text = ((1 + x) * 12).ToString();
             PowderNeeded.Text = ((1 + x) * 150).ToString();

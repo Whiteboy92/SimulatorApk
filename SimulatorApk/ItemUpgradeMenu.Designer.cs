@@ -355,7 +355,7 @@ namespace SimulatorApk
             this.Name = "ItemUpgradeMenu";
             this.Text = "ItemUpgradeMenu";
             this.Load += new System.EventHandler(this.ItemUpgradeMenu_Load);
-            this.Shown += new System.EventHandler(this.ItemUpgradeMenu_Shown);
+
             ((System.ComponentModel.ISupportInitialize)(this.pbItemUpgrade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

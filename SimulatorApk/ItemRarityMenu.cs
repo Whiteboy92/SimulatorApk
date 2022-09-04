@@ -11,23 +11,7 @@ namespace SimulatorApk
         {
             InitializeComponent();
         }
-
-
-        private void ItemRarityMenu_Shown(object sender, EventArgs e)
-        {
-            _ = GetRarity();
-            _ = GetItemId();
-        }
-
-        private Equipment GetRarity()
-        {
-            return SharedClass.RarityLvlValue;
-        }
-
-        private string GetItemId()
-        {
-            return SharedClass.ItemId;
-        }
+        
 
         private void ItemRarityMenu_Load(object sender, EventArgs e)
         {
