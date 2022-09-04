@@ -30,10 +30,10 @@ namespace SimulatorApk
         // display
         public override string ToString()
         {
-            return " Dmg: " + DmgMin + " - " + DmgMax + "\n" + 
-                   " HitRate: " + HitRate + "\n" + 
-                   " CritChance: " + CritChance + "\n" + 
-                   " CritDmg: " + CritDmg + "\n" + 
+            return " Dmg: " + DmgMin + " - " + DmgMax + "\n" +
+                   " HitRate: " + HitRate + "\n" +
+                   " CritChance: " + CritChance + "\n" +
+                   " CritDmg: " + CritDmg + "\n" +
                    " Rarity: " + Rarity + "\n" +
                    " Upgrade Lvl: " + UpgradeLevel;
         }
@@ -43,7 +43,7 @@ namespace SimulatorApk
         {
             return other is not null && ReferenceEquals(this, other);
         }
-        
+
 
         public override bool Equals(object obj)
         {
@@ -58,9 +58,9 @@ namespace SimulatorApk
             return (Equipments != null ? Equipments.GetHashCode() : 0);
         }
 
-        
+
         //Equipment constructor
-        private Equipment(int dmgMax,     int dmgMin, int hitRate,
+        private Equipment(int dmgMax, int dmgMin, int hitRate,
                           int critChance, int critDmg, int rarity, int upgradeLvl)
         {
             DmgMax = dmgMax;
@@ -88,7 +88,7 @@ namespace SimulatorApk
         // creates instance of Equipment class and assigns it's parameters
         public static void CreateInstance()
         {
-            string strSeperator = ";";
+            string strSeparator = ";";
             StringBuilder sbOutput = new();
             var random = new Random();
 
@@ -103,32 +103,32 @@ namespace SimulatorApk
                     rarity: random.Next(1, 3),
                     upgradeLvl: random.Next(0, 0));
             }
-            sbOutput.AppendLine(string.Join(strSeperator, Equipments));
+            sbOutput.AppendLine(string.Join(strSeparator, Equipments));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt", sbOutput.ToString());
         }
 
 
-        // overload, changing values of just selected item of Euipment
+        // overload, changing values of just selected item of Equipment
         public static void CreateInstance(string s)
         {
-            string strSeperator = ";";
+            const string strSeparator = ";";
             StringBuilder sbOutput = new();
             var random = new Random();
 
-            if (s == null) { s = "button1";}
+            s ??= "button1";
 
-            int y = Int32.Parse(s.Replace("button", ""));
+            var y = int.Parse(s.Replace("button", ""));
 
-                Equipments[s] = new Equipment(
-                    dmgMin: random.Next(150 * y, 500 * y),
-                    dmgMax: random.Next(550 * y, 1200 * y),
-                    hitRate: random.Next(100 * y, 350 * y),
-                    critChance: random.Next(8, 22),
-                    critDmg: random.Next(175, 450),
-                    rarity: random.Next(1, 3),
-                    upgradeLvl: random.Next(0, 0));
+            Equipments[s] = new Equipment(
+                dmgMin: random.Next(150 * y, 500 * y),
+                dmgMax: random.Next(550 * y, 1200 * y),
+                hitRate: random.Next(100 * y, 350 * y),
+                critChance: random.Next(8, 22),
+                critDmg: random.Next(175, 450),
+                rarity: random.Next(1, 3),
+                upgradeLvl: random.Next(0, 0));
 
-            sbOutput.AppendLine(string.Join(strSeperator, Equipments));
+            sbOutput.AppendLine(string.Join(strSeparator, Equipments));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict2.txt", sbOutput.ToString());
         }
 

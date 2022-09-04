@@ -26,13 +26,13 @@ namespace SimulatorApk
         }
 
 
-        public string GetItemId()
+        private string GetItemId()
         {
             return SharedClass.ItemId;
         }
 
 
-        public Equipment GetRarity()
+        private Equipment GetRarity()
         {
             return SharedClass.RarityLvlValue;
         }
@@ -41,20 +41,20 @@ namespace SimulatorApk
 
         private void Button_MouseLeave(object sender, EventArgs e)
         {
-            if (sender is not Button button) return; 
+            if (sender is not Button button) return;
             button.BackColor = Color.FromArgb(46, 51, 73);
         }
 
 
         private void BtnRollValues_Click(object sender, EventArgs e)
         {
-            string x = SharedClass.ItemId;
+            var x = SharedClass.ItemId;
             Equipment.ClearInstances2();
             Equipment.CreateInstance(x);
-            BtnViewStats_Click(sender, e);
+            BtnViewStats_Click(sender);
         }
 
-        private void BtnViewStats_Click(object sender, EventArgs e)
+        private void BtnViewStats_Click(object sender)
         {
             tbItemStats.Text = null;
             btnRollValues.Enabled = true;

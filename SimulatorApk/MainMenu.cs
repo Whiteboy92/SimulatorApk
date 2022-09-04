@@ -25,13 +25,8 @@ namespace SimulatorApk
         }
 
 
-        private void OpenChildForm(Form childForm, object btnSender)
+        private void OpenChildForm(Form childForm)
         {
-            if (btnSender is null)
-            {
-                throw new ArgumentNullException(nameof(btnSender));
-            }
-
             _activeForm?.Close();
 
             _activeForm = childForm;
@@ -58,21 +53,21 @@ namespace SimulatorApk
         private void BtnItemSelect_Click(object sender, EventArgs e)
         {
             btnItemSelect.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Selection_Click.png");
-            OpenChildForm(new ItemSelectionMenu(this), sender);
+            OpenChildForm(new ItemSelectionMenu(this));
         }
 
 
         private void BtnUpgrade_Click(object sender, EventArgs e)
         {
             btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Upgrade_Click.png");
-            OpenChildForm(new ItemUpgradeMenu(this), sender);
+            OpenChildForm(new ItemUpgradeMenu(this));
         }
 
 
         private void BtnRarity_Click(object sender, EventArgs e)
         {
             btnRarity.Image = Image.FromFile(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\\Item_Rarity_Click.png");
-            OpenChildForm(new ItemRarityMenu(), sender);
+            OpenChildForm(new ItemRarityMenu());
         }
 
 

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SimulatorApk
 {
-    public partial class ItemUpgradeMenu : Form
+    public sealed partial class ItemUpgradeMenu : Form
     {
         private readonly MainMenu _mainMenu;
 
@@ -29,45 +29,19 @@ namespace SimulatorApk
 
 
         //Set basic materials needed
-        public void UpgradeMats()
+        private void UpgradeMats()
         {
-            int x = SharedClass.UpgradeLvlValue.UpgradeLevel;
+            var x = SharedClass.UpgradeLvlValue.UpgradeLevel;
             GoldNeeded.Text = ((1 + x) * 750).ToString();
             GemNeeded.Text = ((1 + x) * 12).ToString();
             PowderNeeded.Text = ((1 + x) * 150).ToString();
         }
 
 
-        public bool IsEqScroll
-        {
-            get
-            {
-                if (cBoxScroll.Checked == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }  
+        private bool IsEqScroll => cBoxScroll.Checked;
 
 
-        public bool IsEqAmulet
-        {
-            get
-            {
-                if (cBoxAmulet.Checked == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        private bool IsEqAmulet => cBoxAmulet.Checked;
 
 
         private void ItemUpgradeMenu_Shown(object sender, EventArgs e)
@@ -79,19 +53,17 @@ namespace SimulatorApk
 
         Image GetImage()
         {
-            while (SharedClass.ImageToDisplay == null)
-            {
-            }
             return SharedClass.ImageToDisplay;
         }
 
 
-        public Equipment GetUpgradeLevel()
+        private Equipment GetUpgradeLevel()
         {
             return SharedClass.UpgradeLvlValue;
         }
 
 
+        //Add up total materials used for upgrades
         private void TotalMaterials()
         {
             int.TryParse(TotalGoldUsed.Text, out var i);
@@ -108,6 +80,7 @@ namespace SimulatorApk
         }
 
 
+        // Add up all amulets used and display it in label
         private void AmuletUsed()
         {
             int j = 1;
@@ -116,6 +89,7 @@ namespace SimulatorApk
         }
 
 
+        // Add up all Scrolls used and display it in label
         private void ScrollUsed()
         {
             int j = 1;
@@ -132,7 +106,7 @@ namespace SimulatorApk
             {
                 var random = new Random();
                 var num = random.Next(1, 1000);
-                if(num < 1000/(1+ SharedClass.UpgradeLvlValue.UpgradeLevel*1.69))
+                if (num < 1000 / (1 + SharedClass.UpgradeLvlValue.UpgradeLevel * 1.69))
                 {
                     lbUpgradeOutput.BackColor = Color.FromArgb(46, 51, 73);
                     await Task.Delay(50);

@@ -7,7 +7,7 @@ namespace SimulatorApk
 {
     class RarityStats
     {
-        static readonly Random random = new();
+        private static readonly Random random = new();
 
         public static Dictionary<string, RarityStats> RarityBonus { get; } = new();
 
@@ -66,7 +66,7 @@ namespace SimulatorApk
         // Creating rarity stats and values
         public static void CreateInstance()
         {
-            string strSeperator = ";";
+            string strSeparator = ";";
             StringBuilder sbOutput = new();
             _ = new Random();
 
@@ -83,7 +83,7 @@ namespace SimulatorApk
                     highMonster:    random.Next(17, 29),
                     lowMonster:     random.Next(14, 32));
             } 
-            sbOutput.AppendLine(string.Join(strSeperator, RarityBonus));
+            sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity.txt", sbOutput.ToString());
         }
 
@@ -91,7 +91,7 @@ namespace SimulatorApk
         // Overload Changing rarity and stats for just selected item
         public static void CreateInstance(string s)
         {
-            string strSeperator = ";";
+            string strSeparator = ";";
             StringBuilder sbOutput = new();
             _ = new Random();
 
@@ -108,7 +108,7 @@ namespace SimulatorApk
                     highMonster:    random.Next(17 * x, 29 * x),
                     lowMonster:     random.Next(14 * x, 32 * x));
 
-            sbOutput.AppendLine(string.Join(strSeperator, RarityBonus));
+            sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
             File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity2.txt", sbOutput.ToString());
         }
     }

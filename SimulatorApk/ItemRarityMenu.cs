@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace SimulatorApk
 {
-    public partial class ItemRarityMenu : Form
+    public sealed partial class ItemRarityMenu : Form
     {
         public ItemRarityMenu()
         {
@@ -19,13 +19,12 @@ namespace SimulatorApk
             _ = GetItemId();
         }
 
-
-        public Equipment GetRarity()
+        private Equipment GetRarity()
         {
             return SharedClass.RarityLvlValue;
         }
 
-        public string GetItemId()
+        private string GetItemId()
         {
             return SharedClass.ItemId;
         }
@@ -34,7 +33,7 @@ namespace SimulatorApk
         {
             pbItemRarity.Image = SharedClass.ImageToDisplay;
             lbRarityDisplay.Text = SharedClass.RarityLvlValue.Rarity.ToString();
-            
+
             DisplayRarityStats();
         }
 
@@ -73,35 +72,35 @@ namespace SimulatorApk
             }
             else if (num <= 4 & num > 1)    //3%
             {
-                SharedClass.RarityLvlValue.Rarity = 7; 
+                SharedClass.RarityLvlValue.Rarity = 7;
             }
             else if (num <= 9 & num > 4)    //5%
             {
-                SharedClass.RarityLvlValue.Rarity = 6; 
+                SharedClass.RarityLvlValue.Rarity = 6;
             }
             else if (num <= 16 & num > 9)   //7%
             {
-                SharedClass.RarityLvlValue.Rarity = 5; 
+                SharedClass.RarityLvlValue.Rarity = 5;
             }
             else if (num <= 26 & num > 16)  //10%
             {
-                SharedClass.RarityLvlValue.Rarity = 4; 
+                SharedClass.RarityLvlValue.Rarity = 4;
             }
             else if (num <= 40 & num > 26)  //14%
             {
-                SharedClass.RarityLvlValue.Rarity = 3; 
+                SharedClass.RarityLvlValue.Rarity = 3;
             }
             else if (num <= 58 & num > 40)  //18%
             {
-                SharedClass.RarityLvlValue.Rarity = 2; 
+                SharedClass.RarityLvlValue.Rarity = 2;
             }
             else if (num <= 78 & num > 58)  //20%
             {
-                SharedClass.RarityLvlValue.Rarity = 1; 
+                SharedClass.RarityLvlValue.Rarity = 1;
             }
             else if (num <= 100 & num > 78) //22%
             {
-                SharedClass.RarityLvlValue.Rarity = 0; 
+                SharedClass.RarityLvlValue.Rarity = 0;
             }
 
             lbRarityDisplay.Text = SharedClass.RarityLvlValue.Rarity.ToString();
