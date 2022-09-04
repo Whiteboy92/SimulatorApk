@@ -75,13 +75,13 @@ namespace SimulatorApk
 
         public static void ClearInstances()
         {
-            File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt");
+            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict.txt");
         }
 
 
         public static void ClearInstances2()
         {
-            File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict2.txt");
+            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict2.txt");
         }
 
 
@@ -104,7 +104,7 @@ namespace SimulatorApk
                     upgradeLvl: random.Next(0, 0));
             }
             sbOutput.AppendLine(string.Join(strSeparator, Equipments));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict.txt", sbOutput.ToString());
         }
 
 
@@ -129,7 +129,7 @@ namespace SimulatorApk
                 upgradeLvl: random.Next(0, 0));
 
             sbOutput.AppendLine(string.Join(strSeparator, Equipments));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dict2.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict2.txt", sbOutput.ToString());
         }
 
 

@@ -38,7 +38,7 @@ namespace SimulatorApk
         }
 
 
-        // display rairty stats
+        // display rarity stats
         public override string ToString()
         {
             return " ArmorPenetration: " + ArmorPenetration + "\n" +
@@ -55,11 +55,11 @@ namespace SimulatorApk
 
         public static void ClearInstances()
         {
-            File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity.txt");
+            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity.txt");
         }
         public static void ClearInstances2()
         {
-            File.Delete(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity2.txt");
+            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity2.txt");
         }
 
 
@@ -84,7 +84,7 @@ namespace SimulatorApk
                     lowMonster:     random.Next(14, 32));
             } 
             sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity.txt", sbOutput.ToString());
         }
 
 
@@ -95,7 +95,7 @@ namespace SimulatorApk
             StringBuilder sbOutput = new();
             _ = new Random();
 
-            int x = SharedClass.RarityLvlValue.Rarity;
+            var x = SharedClass.RarityLvlValue.Rarity;
             
                 RarityBonus[s] = new RarityStats(
                     armorPen:       random.Next(12 * x, 22 * x),
@@ -109,7 +109,7 @@ namespace SimulatorApk
                     lowMonster:     random.Next(14 * x, 32 * x));
 
             sbOutput.AppendLine(string.Join(strSeparator, RarityBonus));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\WiT\Semestr 4\Solutions\SimulatorApk\dictRarity2.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity2.txt", sbOutput.ToString());
         }
     }
 }
