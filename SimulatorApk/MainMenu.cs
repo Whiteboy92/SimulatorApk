@@ -52,40 +52,40 @@ namespace SimulatorApk
 
         private void BtnItemSelect_Click(object sender, EventArgs e)
         {
-            btnItemSelect.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\SimulatorApk\Equipment upgrade_files\Item_Selection_Click.png");
+            btnItemSelect.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\Equipment upgrade_files\Item_Selection_Click.png");
             OpenChildForm(new ItemSelectionMenu(this));
         }
 
 
         private void BtnUpgrade_Click(object sender, EventArgs e)
         {
-            btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\SimulatorApk\Equipment upgrade_files\Item_Upgrade_Click.png");
+            btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\Equipment upgrade_files\Item_Upgrade_Click.png");
             OpenChildForm(new ItemUpgradeMenu(this));
         }
 
 
         private void BtnRarity_Click(object sender, EventArgs e)
         {
-            btnRarity.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\SimulatorApk\Equipment upgrade_files\Item_Rarity_Click.png");
+            btnRarity.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\Equipment upgrade_files\Item_Rarity_Click.png");
             OpenChildForm(new ItemRarityMenu());
         }
 
 
         private void BtnItemSelect_Leave(object sender, EventArgs e)
         {
-            btnItemSelect.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\SimulatorApk\Equipment upgrade_files\Item_Selection.png");
+            btnItemSelect.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\Equipment upgrade_files\Item_Selection.png");
         }
 
 
         private void BtnUpgrade_Leave(object sender, EventArgs e)
         {
-            btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\SimulatorApk\Equipment upgrade_files\Item_Upgrade.png");
+            btnUpgrade.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\Equipment upgrade_files\Item_Upgrade.png");
         }
 
 
         private void BtnRarity_Leave(object sender, EventArgs e)
         {
-            btnRarity.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\SimulatorApk\Equipment upgrade_files\Item_Rarity.png");
+            btnRarity.Image = Image.FromFile(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\Equipment upgrade_files\Item_Rarity.png");
         }
     }
 }

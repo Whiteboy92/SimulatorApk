@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labItemRarity = new System.Windows.Forms.Label();
             this.labItemUpgrade = new System.Windows.Forms.Label();
@@ -43,7 +42,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(73)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (24)))), ((int) (((byte) (30)))), ((int) (((byte) (73)))));
             this.panel1.Controls.Add(this.labItemRarity);
             this.panel1.Controls.Add(this.labItemUpgrade);
             this.panel1.Controls.Add(this.labItemSelect);
@@ -58,8 +57,8 @@
             // 
             // labItemRarity
             // 
-            this.labItemRarity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(73)))));
-            this.labItemRarity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labItemRarity.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (24)))), ((int) (((byte) (30)))), ((int) (((byte) (73)))));
+            this.labItemRarity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.labItemRarity.ForeColor = System.Drawing.Color.Cyan;
             this.labItemRarity.Location = new System.Drawing.Point(3, 401);
             this.labItemRarity.Name = "labItemRarity";
@@ -70,8 +69,8 @@
             // 
             // labItemUpgrade
             // 
-            this.labItemUpgrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(73)))));
-            this.labItemUpgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labItemUpgrade.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (24)))), ((int) (((byte) (30)))), ((int) (((byte) (73)))));
+            this.labItemUpgrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.labItemUpgrade.ForeColor = System.Drawing.Color.Cyan;
             this.labItemUpgrade.Location = new System.Drawing.Point(3, 234);
             this.labItemUpgrade.Name = "labItemUpgrade";
@@ -82,8 +81,8 @@
             // 
             // labItemSelect
             // 
-            this.labItemSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(73)))));
-            this.labItemSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labItemSelect.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (24)))), ((int) (((byte) (30)))), ((int) (((byte) (73)))));
+            this.labItemSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.labItemSelect.ForeColor = System.Drawing.Color.Cyan;
             this.labItemSelect.Location = new System.Drawing.Point(3, 68);
             this.labItemSelect.Name = "labItemSelect";
@@ -97,7 +96,7 @@
             this.btnRarity.BackColor = System.Drawing.Color.Transparent;
             this.btnRarity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnRarity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRarity.Image = ((System.Drawing.Image)(resources.GetObject("btnRarity.Image")));
+            this.btnRarity.Image = global::SimulatorApk.Properties.Resources.Item_Rarity;
             this.btnRarity.Location = new System.Drawing.Point(40, 427);
             this.btnRarity.Name = "btnRarity";
             this.btnRarity.Size = new System.Drawing.Size(63, 63);
@@ -111,7 +110,7 @@
             this.btnUpgrade.BackColor = System.Drawing.Color.Transparent;
             this.btnUpgrade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnUpgrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpgrade.Image = ((System.Drawing.Image)(resources.GetObject("btnUpgrade.Image")));
+            this.btnUpgrade.Image = global::SimulatorApk.Properties.Resources.Item_Upgrade;
             this.btnUpgrade.Location = new System.Drawing.Point(40, 260);
             this.btnUpgrade.Name = "btnUpgrade";
             this.btnUpgrade.Size = new System.Drawing.Size(63, 63);
@@ -125,7 +124,7 @@
             this.btnItemSelect.BackColor = System.Drawing.Color.Transparent;
             this.btnItemSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnItemSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemSelect.Image = ((System.Drawing.Image)(resources.GetObject("btnItemSelect.Image")));
+            this.btnItemSelect.Image = global::SimulatorApk.Properties.Resources.Item_Selection;
             this.btnItemSelect.Location = new System.Drawing.Point(40, 94);
             this.btnItemSelect.Name = "btnItemSelect";
             this.btnItemSelect.Size = new System.Drawing.Size(63, 63);
@@ -136,9 +135,7 @@
             // 
             // panelDesktop
             // 
-            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.Location = new System.Drawing.Point(150, 0);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1034, 611);
@@ -148,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (51)))), ((int) (((byte) (73)))));
             this.ClientSize = new System.Drawing.Size(1184, 611);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel1);
@@ -158,7 +155,6 @@
             this.Load += new System.EventHandler(this.MyMain_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Panel panelDesktop;

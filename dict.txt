@@ -288,3 +288,107 @@ button5: Dmg: 985 - 5550
  CritDmg: 317
  Rarity: 2
  Upgrade Lvl: 0]
+[button1,  Dmg: 373 - 837
+ HitRate: 205
+ CritChance: 12
+ CritDmg: 197
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 315 - 2178
+ HitRate: 527
+ CritChance: 20
+ CritDmg: 200
+ Rarity: 2
+ Upgrade Lvl: 0];[button3,  Dmg: 758 - 2075
+ HitRate: 467
+ CritChance: 10
+ CritDmg: 352
+ Rarity: 1
+ Upgrade Lvl: 0];[button4,  Dmg: 653 - 2200
+ HitRate: 1191
+ CritChance: 11
+ CritDmg: 402
+ Rarity: 1
+ Upgrade Lvl: 0];[button5,  Dmg: 1448 - 5894
+ HitRate: 1569
+ CritChance: 13
+ CritDmg: 404
+ Rarity: 1
+ Upgrade Lvl: 0]
+[button1,  Dmg: 394 - 720
+ HitRate: 253
+ CritChance: 17
+ CritDmg: 293
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 572 - 1886
+ HitRate: 276
+ CritChance: 18
+ CritDmg: 189
+ Rarity: 2
+ Upgrade Lvl: 0];[button3,  Dmg: 760 - 2716
+ HitRate: 1028
+ CritChance: 10
+ CritDmg: 371
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 1393 - 4728
+ HitRate: 1295
+ CritChance: 14
+ CritDmg: 241
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 2035 - 4785
+ HitRate: 1680
+ CritChance: 9
+ CritDmg: 212
+ Rarity: 1
+ Upgrade Lvl: 0]
+[button1,  Dmg: 175 - 784
+ HitRate: 268
+ CritChance: 12
+ CritDmg: 366
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 841 - 1976
+ HitRate: 334
+ CritChance: 15
+ CritDmg: 292
+ Rarity: 2
+ Upgrade Lvl: 0];[button3,  Dmg: 643 - 2987
+ HitRate: 1043
+ CritChance: 19
+ CritDmg: 369
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 1227 - 4145
+ HitRate: 1155
+ CritChance: 10
+ CritDmg: 336
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 1256 - 5184
+ HitRate: 638
+ CritChance: 15
+ CritDmg: 184
+ Rarity: 2
+ Upgrade Lvl: 0]
+[button1,  Dmg: 495 - 611
+ HitRate: 125
+ CritChance: 20
+ CritDmg: 186
+ Rarity: 1
+ Upgrade Lvl: 0];[button2,  Dmg: 549 - 1322
+ HitRate: 649
+ CritChance: 17
+ CritDmg: 357
+ Rarity: 1
+ Upgrade Lvl: 0];[button3,  Dmg: 597 - 3355
+ HitRate: 373
+ CritChance: 17
+ CritDmg: 431
+ Rarity: 2
+ Upgrade Lvl: 0];[button4,  Dmg: 1092 - 4761
+ HitRate: 532
+ CritChance: 21
+ CritDmg: 257
+ Rarity: 2
+ Upgrade Lvl: 0];[button5,  Dmg: 1594 - 5785
+ HitRate: 1092
+ CritChance: 17
+ CritDmg: 272
+ Rarity: 2
+ Upgrade Lvl: 0]

@@ -55,11 +55,11 @@ namespace SimulatorApk
 
         public static void ClearInstances()
         {
-            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity.txt");
+            File.Delete(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\dictRarity.txt");
         }
         public static void ClearInstances2()
         {
-            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity2.txt");
+            File.Delete(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\dictRarity2.txt");
         }
 
 
@@ -90,7 +90,7 @@ namespace SimulatorApk
                     lowMonster:     GetRandomNumberFromRange(14, 32));
             } 
             sbOutput.AppendLine(string.Join(separator, RarityBonus));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\dictRarity.txt", sbOutput.ToString());
         }
 
 
@@ -115,7 +115,7 @@ namespace SimulatorApk
                     lowMonster:     GetRandomNumberFromRange(14 * x, 32 * x));
 
             sbOutput.AppendLine(string.Join(separator, RarityBonus));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dictRarity2.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\dictRarity2.txt", sbOutput.ToString());
         }
     }
 }

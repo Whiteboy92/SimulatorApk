@@ -531,3 +531,249 @@
  BonusDmg: 13
  HighLvlMonsterDmg: 18
  LowLvlMonsterDmg: 24]
+[button1,  ArmorPenetration: 14
+ BonusHitRate 194
+ BonusBasicDmg: 334
+ BonusCritChance: 6%
+ StunChance: 3%
+ ElementalDmg: 889
+ BonusDmg: 8
+ HighLvlMonsterDmg: 20
+ LowLvlMonsterDmg: 15];[button2,  ArmorPenetration: 18
+ BonusHitRate 169
+ BonusBasicDmg: 479
+ BonusCritChance: 5%
+ StunChance: 2%
+ ElementalDmg: 610
+ BonusDmg: 11
+ HighLvlMonsterDmg: 20
+ LowLvlMonsterDmg: 28];[button3,  ArmorPenetration: 20
+ BonusHitRate 128
+ BonusBasicDmg: 356
+ BonusCritChance: 7%
+ StunChance: 3%
+ ElementalDmg: 663
+ BonusDmg: 16
+ HighLvlMonsterDmg: 24
+ LowLvlMonsterDmg: 15];[button4,  ArmorPenetration: 18
+ BonusHitRate 224
+ BonusBasicDmg: 832
+ BonusCritChance: 8%
+ StunChance: 3%
+ ElementalDmg: 257
+ BonusDmg: 12
+ HighLvlMonsterDmg: 26
+ LowLvlMonsterDmg: 17];[button5,  ArmorPenetration: 20
+ BonusHitRate 150
+ BonusBasicDmg: 784
+ BonusCritChance: 9%
+ StunChance: 1%
+ ElementalDmg: 891
+ BonusDmg: 13
+ HighLvlMonsterDmg: 17
+ LowLvlMonsterDmg: 18]
+[button1,  ArmorPenetration: 15
+ BonusHitRate 174
+ BonusBasicDmg: 321
+ BonusCritChance: 5%
+ StunChance: 2%
+ ElementalDmg: 192
+ BonusDmg: 9
+ HighLvlMonsterDmg: 28
+ LowLvlMonsterDmg: 30];[button2,  ArmorPenetration: 21
+ BonusHitRate 217
+ BonusBasicDmg: 795
+ BonusCritChance: 6%
+ StunChance: 2%
+ ElementalDmg: 187
+ BonusDmg: 17
+ HighLvlMonsterDmg: 21
+ LowLvlMonsterDmg: 22];[button3,  ArmorPenetration: 14
+ BonusHitRate 244
+ BonusBasicDmg: 700
+ BonusCritChance: 5%
+ StunChance: 3%
+ ElementalDmg: 736
+ BonusDmg: 12
+ HighLvlMonsterDmg: 23
+ LowLvlMonsterDmg: 30];[button4,  ArmorPenetration: 12
+ BonusHitRate 113
+ BonusBasicDmg: 826
+ BonusCritChance: 4%
+ StunChance: 3%
+ ElementalDmg: 722
+ BonusDmg: 12
+ HighLvlMonsterDmg: 22
+ LowLvlMonsterDmg: 16];[button5,  ArmorPenetration: 12
+ BonusHitRate 158
+ BonusBasicDmg: 518
+ BonusCritChance: 9%
+ StunChance: 2%
+ ElementalDmg: 799
+ BonusDmg: 10
+ HighLvlMonsterDmg: 23
+ LowLvlMonsterDmg: 31]
+[button1,  ArmorPenetration: 19
+ BonusHitRate 142
+ BonusBasicDmg: 719
+ BonusCritChance: 4%
+ StunChance: 1%
+ ElementalDmg: 426
+ BonusDmg: 15
+ HighLvlMonsterDmg: 25
+ LowLvlMonsterDmg: 21];[button2,  ArmorPenetration: 13
+ BonusHitRate 141
+ BonusBasicDmg: 476
+ BonusCritChance: 6%
+ StunChance: 2%
+ ElementalDmg: 757
+ BonusDmg: 8
+ HighLvlMonsterDmg: 18
+ LowLvlMonsterDmg: 18];[button3,  ArmorPenetration: 14
+ BonusHitRate 188
+ BonusBasicDmg: 822
+ BonusCritChance: 6%
+ StunChance: 1%
+ ElementalDmg: 433
+ BonusDmg: 8
+ HighLvlMonsterDmg: 19
+ LowLvlMonsterDmg: 20];[button4,  ArmorPenetration: 12
+ BonusHitRate 215
+ BonusBasicDmg: 722
+ BonusCritChance: 4%
+ StunChance: 1%
+ ElementalDmg: 182
+ BonusDmg: 9
+ HighLvlMonsterDmg: 26
+ LowLvlMonsterDmg: 22];[button5,  ArmorPenetration: 21
+ BonusHitRate 108
+ BonusBasicDmg: 334
+ BonusCritChance: 8%
+ StunChance: 2%
+ ElementalDmg: 761
+ BonusDmg: 8
+ HighLvlMonsterDmg: 21
+ LowLvlMonsterDmg: 26]
+[button1,  ArmorPenetration: 14
+ BonusHitRate 210
+ BonusBasicDmg: 443
+ BonusCritChance: 4%
+ StunChance: 3%
+ ElementalDmg: 221
+ BonusDmg: 14
+ HighLvlMonsterDmg: 18
+ LowLvlMonsterDmg: 19];[button2,  ArmorPenetration: 14
+ BonusHitRate 147
+ BonusBasicDmg: 690
+ BonusCritChance: 4%
+ StunChance: 3%
+ ElementalDmg: 727
+ BonusDmg: 13
+ HighLvlMonsterDmg: 17
+ LowLvlMonsterDmg: 29];[button3,  ArmorPenetration: 16
+ BonusHitRate 229
+ BonusBasicDmg: 430
+ BonusCritChance: 6%
+ StunChance: 3%
+ ElementalDmg: 395
+ BonusDmg: 17
+ HighLvlMonsterDmg: 19
+ LowLvlMonsterDmg: 24];[button4,  ArmorPenetration: 17
+ BonusHitRate 186
+ BonusBasicDmg: 479
+ BonusCritChance: 10%
+ StunChance: 2%
+ ElementalDmg: 247
+ BonusDmg: 8
+ HighLvlMonsterDmg: 18
+ LowLvlMonsterDmg: 26];[button5,  ArmorPenetration: 20
+ BonusHitRate 175
+ BonusBasicDmg: 850
+ BonusCritChance: 5%
+ StunChance: 3%
+ ElementalDmg: 803
+ BonusDmg: 14
+ HighLvlMonsterDmg: 27
+ LowLvlMonsterDmg: 23]
+[button1,  ArmorPenetration: 19
+ BonusHitRate 242
+ BonusBasicDmg: 899
+ BonusCritChance: 10%
+ StunChance: 1%
+ ElementalDmg: 567
+ BonusDmg: 13
+ HighLvlMonsterDmg: 18
+ LowLvlMonsterDmg: 23];[button2,  ArmorPenetration: 21
+ BonusHitRate 151
+ BonusBasicDmg: 885
+ BonusCritChance: 7%
+ StunChance: 3%
+ ElementalDmg: 746
+ BonusDmg: 8
+ HighLvlMonsterDmg: 24
+ LowLvlMonsterDmg: 23];[button3,  ArmorPenetration: 21
+ BonusHitRate 135
+ BonusBasicDmg: 369
+ BonusCritChance: 6%
+ StunChance: 2%
+ ElementalDmg: 814
+ BonusDmg: 15
+ HighLvlMonsterDmg: 26
+ LowLvlMonsterDmg: 16];[button4,  ArmorPenetration: 15
+ BonusHitRate 184
+ BonusBasicDmg: 532
+ BonusCritChance: 6%
+ StunChance: 1%
+ ElementalDmg: 445
+ BonusDmg: 10
+ HighLvlMonsterDmg: 21
+ LowLvlMonsterDmg: 16];[button5,  ArmorPenetration: 18
+ BonusHitRate 243
+ BonusBasicDmg: 534
+ BonusCritChance: 6%
+ StunChance: 3%
+ ElementalDmg: 645
+ BonusDmg: 11
+ HighLvlMonsterDmg: 25
+ LowLvlMonsterDmg: 23]
+[button1,  ArmorPenetration: 17
+ BonusHitRate 198
+ BonusBasicDmg: 347
+ BonusCritChance: 6%
+ StunChance: 3%
+ ElementalDmg: 542
+ BonusDmg: 12
+ HighLvlMonsterDmg: 24
+ LowLvlMonsterDmg: 26];[button2,  ArmorPenetration: 19
+ BonusHitRate 155
+ BonusBasicDmg: 506
+ BonusCritChance: 4%
+ StunChance: 1%
+ ElementalDmg: 382
+ BonusDmg: 12
+ HighLvlMonsterDmg: 18
+ LowLvlMonsterDmg: 23];[button3,  ArmorPenetration: 13
+ BonusHitRate 205
+ BonusBasicDmg: 343
+ BonusCritChance: 8%
+ StunChance: 1%
+ ElementalDmg: 639
+ BonusDmg: 14
+ HighLvlMonsterDmg: 21
+ LowLvlMonsterDmg: 26];[button4,  ArmorPenetration: 13
+ BonusHitRate 190
+ BonusBasicDmg: 625
+ BonusCritChance: 7%
+ StunChance: 1%
+ ElementalDmg: 829
+ BonusDmg: 11
+ HighLvlMonsterDmg: 19
+ LowLvlMonsterDmg: 16];[button5,  ArmorPenetration: 12
+ BonusHitRate 246
+ BonusBasicDmg: 692
+ BonusCritChance: 10%
+ StunChance: 3%
+ ElementalDmg: 635
+ BonusDmg: 14
+ HighLvlMonsterDmg: 23
+ LowLvlMonsterDmg: 31]

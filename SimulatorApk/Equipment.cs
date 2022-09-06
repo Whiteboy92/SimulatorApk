@@ -70,7 +70,7 @@ namespace SimulatorApk
 
         public static void ClearInstancesOne()
         {
-            File.Delete(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict2.txt");
+            File.Delete(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\dict2.txt");
         }
 
 
@@ -93,7 +93,7 @@ namespace SimulatorApk
                     upgradeLvl: random.Next(0, 0));
             }
             sbOutput.AppendLine(string.Join(separator, Equipments));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\dict.txt", sbOutput.ToString());
         }
 
 
@@ -118,7 +118,7 @@ namespace SimulatorApk
                 upgradeLvl: random.Next(0, 0));
 
             sbOutput.AppendLine(string.Join(separator, Equipments));
-            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\SimulatorApk\dict2.txt", sbOutput.ToString());
+            File.AppendAllText(@"C:\Users\Admin\Desktop\Games\Repos\SimulatorApk\dict2.txt", sbOutput.ToString());
         }
 
 
